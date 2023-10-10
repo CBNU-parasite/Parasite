@@ -6,6 +6,9 @@ ___
 - Analizing nutrient from daily meal
 - Visualizing nutrient from every diet
 - Sharing what you eat on "God Life" community
+### Use
+- *Spring*
+- *LogMeal*
 ___
 ## TeamMember
 ### 황재찬

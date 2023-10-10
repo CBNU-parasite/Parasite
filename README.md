@@ -1,5 +1,5 @@
 # 해드림
-WebSite_Project from OpenSource develop project class 
+WebSite_Project from OpenSource development project class 
 
 ___
 ## 황재찬

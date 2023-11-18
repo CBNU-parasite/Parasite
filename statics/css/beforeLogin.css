@@ -1,6 +1,40 @@
-#FirstFrame{
-    width:auto;
-    height:fit-content;
-    background-color: rgb(85.04, 236.94, 81.94);
-    padding : 0px;
+.container{
+    max-width : 100%;
+    height : 1000px;
+    background-color :rgba(126, 193, 202, 0.20);
+}
+#image{
+    margin:0 auto;
+    display: block;
+    width :100%;
+    height : auto;
+}
+#textBox1{
+    position: absolute;
+    top: 40%;
+    left: 48%;
+    background-color : white;
+    border-radius: 50px;
+}
+#imageText1{
+    padding:20px;
+    font-size: 50px;
+}
+#impactText{
+    font-size: 55px;
+    color : red;
+}
+#lineGraphImage{
+    float:left;
+}
+#lineGraphText{
+    font-size: 40px;
+    float:right;
+}
+#circleGraphImage{
+    float:right;
+}
+#circleGraphText{
+    font-size:40px;
+    float:left;
 }

@@ -55,7 +55,7 @@ form {
 
 form > div {
   position: relative;
-  flex: 2;
+  flex: 1;
 }
 
 form > div > input {

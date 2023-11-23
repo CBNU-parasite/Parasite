@@ -1,0 +1,49 @@
+body{
+    margin:0;
+    align-items:center;
+}
+#title{
+    top:5%;
+    text-align:center;
+    font-size:40px;
+    font-weight: bold;
+    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 89.03%);
+    min-height: 200px;
+}
+
+#leftBar{
+    position:absolute;
+    text-align:center;
+    align-items: center;
+    background-color : rgba(85, 237, 82, 0.35);
+    width:min(15%,200px);
+    border-radius:40px;
+    left:5%;
+    padding-top:20px;
+    padding-bottom:20px;
+    border-style:solid;
+}
+
+#barItem{
+    font-size:24px;
+    font-weight:bold;
+    color :rgb(0,0,0);
+    text-decoration-line:underline;
+}
+
+#contents{
+    background-color : rgba(85, 237, 82, 0.35);
+    width: 65%;
+    height:100px;
+    float:right;
+    margin-right:10%;
+    border-radius:40px;
+    border-style:solid;
+    text-align:center;
+}
+
+#contentsText{
+    font-size:30px;
+    font-weight:bold;
+}
+

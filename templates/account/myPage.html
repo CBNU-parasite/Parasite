@@ -21,6 +21,21 @@
         </section>
         <div id = "contents"><!-- 상세 페이지?-->
             <p id = "contentsText">일일 섭취량(kcal/day)</p>
+            <canvas class = "graph" id = "calGraph"></canvas>
+            <!--For Graph-->
+            <p id = "contentsText">평균 영양 섭취 차트</p>
+            <br>
+            <div id = "pieChartBox">
+                <canvas class = "graph" id = "pieChart"></canvas>
+            </div>
+            <div id = "adviceBox">
+                <h3>Status</h3>
+                <a>GOOD</a>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+            <script src="../../statics/js/account/myPage.js"></script>    
         </div>
+        
     </body>
 </html>

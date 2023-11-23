@@ -9,6 +9,7 @@ ____
 ### Use
 - *Spring*
 - *LogMeal*
+- *Chart.js*
 ___
 ## TeamMember
 ### 황재찬

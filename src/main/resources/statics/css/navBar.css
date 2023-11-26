@@ -1,4 +1,6 @@
-
+body{
+    margin: 0;
+}
 #nav_item{
     min-width: 100px;
     font-size:24px;

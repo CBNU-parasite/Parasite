@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HaeDreamApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(HaeDreamApplication.class, args);
     }
 

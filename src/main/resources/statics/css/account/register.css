@@ -60,7 +60,7 @@ body {
   
   form > div > input {
     text-align: center; 
-    height: 49px; 
+    height: 40px; 
     width:  400px; 
     font-size: 20px;  
     border-radius:5px;
@@ -74,9 +74,12 @@ body {
   }
   
   .box5 {
-    width: 50%;
+    width: 70%;
     height: 60px;
-    font-size: 30px;
+    font-size: 35px;
     border-radius:10px;
+    border-color:black;
+    text-decoration: none;
+    color:black;
     background-color: rgb(199, 240, 208);
   }

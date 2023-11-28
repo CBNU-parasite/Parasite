@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+#topBox{
+    overflow:hidden;
+    height:1000px;
+    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 89.03%);
+}
+#analysis{
+    padding-top:50px;
+    float:left;
+    padding-left:20%;
+}
+#analysisBox{
+    background-color :  rgba(85, 237, 82, 0.35);
+    border-radius : 30px 30px 30px 30px;
+    border-right : solid;
+}
+#streak{
+    padding-top:20px;
+    float:right;
+    padding-right:20%;
+}
+#goAnalysis{
+    padding:10px;
+    font-size:30px;
+    font-weight:bold;
+    color :rgb(0,0,0);
+    text-decoration-line:none;
+}
+#streak{
+    font-size:50px;
+    font-weight:bold;
+    width : 300px;
+}
+#label1{
+    position:absolute;
+    width: 400px;
+    left:35%;
+    top:400px;
+    color: #000;
+    font-size: 38px;
+}

@@ -48,7 +48,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 6px;
     gap: 10px;
     height: 250px;
   }
@@ -60,15 +60,16 @@ body {
   
   form > div > input {
     text-align: center; 
-    height: 40px; 
+    height: 49px; 
     width:  400px; 
     font-size: 20px;  
+    border-radius:5px;
   }
   
   form > div > img {
     position: absolute;
     left: 8px;
-    top: 7%;
+    top: 12%;
     width: 20px;
   }
   

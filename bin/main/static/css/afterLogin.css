@@ -1,25 +1,25 @@
 body{
     margin: 0;
-}
-#topBox{
-    overflow:hidden;
-    height:1000px;
+    min-width:1007px;
+    min-height:750px;
+    text-align:center;
+    align-items:center;
     background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 89.03%);
 }
-#analysis{
-    padding-top:50px;
+#topBox{
     float:left;
-    padding-left:20%;
+    width:100%;
+}
+#analysis{
+    align-items:center;
+    margin-top:50px;
+    float:left;
+    margin-left:max(100px,20%);
 }
 #analysisBox{
     background-color :  rgba(85, 237, 82, 0.35);
     border-radius : 30px 30px 30px 30px;
     border-right : solid;
-}
-#streak{
-    padding-top:20px;
-    float:right;
-    padding-right:20%;
 }
 #goAnalysis{
     padding:10px;
@@ -28,10 +28,16 @@ body{
     color :rgb(0,0,0);
     text-decoration-line:none;
 }
+#streakBox{
+    float:right;
+    width:max(400px,20%);
+    margin-right:max(100px,20%);
+    margin-top:50px;
+    text-align:center;
+}
 #streak{
-    font-size:50px;
+    font-size:250%;
     font-weight:bold;
-    width : 300px;
 }
 #label1{
     position:absolute;
@@ -40,4 +46,7 @@ body{
     top:400px;
     color: #000;
     font-size: 38px;
+}
+#navBack{
+    background-color: rgba(85, 237, 82, 0.35) 0%;
 }

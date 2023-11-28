@@ -10,6 +10,7 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <link rel="stylesheet" href = "../../static/css/navBar.css">
   <link rel="stylesheet" href = "../../static/css/afterLogin.css">
+  
   <title>navbar</title>
 </head>
 
@@ -46,29 +47,42 @@
       </div>
     </div>
   </nav>
-  <div id="footer">
-    <div id = "goBox">
-        <img src = "../../static/img/glass.png" id="glass" width = 30px>
-        <a id = "goText" href = "">지금 분석하기</a>
-        <!--이 부분은 나중에 분석페이지만들면 이어질 파트임 --> 
-    </div>
-  </div>
-
   <div id = "firstFrame">
     <div id = "topBox">
         <div id = "analysis">
-            <img style= "padding-left:7%"src = "../../static/img/Graph.png" width = 150px>
-            <div>
-                <a id = 'goAnalysis' href = "">분석하러가기</a>
+            <img src = "../../static/img/Graph.png" width = 150px>
+            <div id = "analysisBox">
+                <a class = "text-dark" id = 'goAnalysis' href = "">분석하러가기</a>
             </div>
         </div>
-        <div id = "streak">
-            <a id = "streak">&nbsp;헬창님은</a><br>
-            <a id = "streak">&nbsp;&nbsp;&nbsp;0일 째</a><br>
-            <a id = "streak">갓생사는중</a>
+        <div id = "streakBox">
+            <a id = "streak">OOO님은<br>0일 째<br>갓생사는 중</a>
+        </div>        
+    </div>
+    <div class="container">
+      <a id = "label1">
+        다른 사람들은<br>어떻게 하고 있을까요?
+      </a>
+      <div class="card" style="width: 18rem;" class = "col-4">
+        <img src="../../static/img/sampleFoodBeer.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">맥주!!!!</h5>
+          <p class="card-text">흑 맥!!주!!</p>
+          <btn class="btn btn-outline-danger"style="font-size:20px" onclick = "iLikeIt(this)">♡</btn>
         </div>
+      </div>
+      <div class="card" style="width: 18rem;" class = "col-4">
+        <img src="../../static/img/sampleFoodForkChap.jpg" class="card-img-top" alt="...">
+        <div class="card-body" >
+          <h5 class="card-title">등갈비</h5>
+          <p class="card-text">초우마이 ㅋㅋ</p>
+          <btn class="btn btn-outline-danger" style="font-size:20px" onclick = "iLikeIt(this)">♡</btn>
+        </div>
+      </div>
+      <script src = "../../static/js/account/likeIt.js"></script>
     </div>
   </div>
+
 </body>
 
 </html>

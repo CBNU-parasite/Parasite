@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <link rel="stylesheet" href="/css/account/login.css">
-        <title>login</title>
-    </head>
-    <body>
-        <div class="container">
-            <div class="box1">
-                <img src="/img/LogIn_Image_1.png" class="box1-image1">
-                <img src="/img/LogIn_Image_2.png" class="box1-image2">
+<head>
+    <link rel="stylesheet" href="/css/account/login.css">
+    <title>login</title>
+</head>
+<body>
+<div class="container">
+    <div class="box1">
+        <img src="/img/LogIn_Image_1.png" class="box1-image1">
+        <img src="/img/LogIn_Image_2.png" class="box1-image2">
+    </div>
+    <div class="box2">
+        <h1>로그인</h1>
+        <form action="/user/login" method="post">
+            <div class="box3">
+                <input type="text" name="userId" placeholder="아이디">
+                <img src="/img/LogIn_Image_3.png">
             </div>
-            <div class="box2">
-                <h1>로그인</h1>
-                <form action = "/user/login" method="post">
-                    <div class="box3">
-                        <input type="text" name="userId" placeholder="아이디">
-                        <img src="/img/LogIn_Image_3.png">
-                    </div>
-                    <div class="box4">
-                        <input type="password" name="userPassword" placeholder="비밀번호">
-                        <img src="/img/LogIn_Image_4.png">
-                    </div>
-                    <div>
-                        <a class="box5" href="" role="button">로그인</a>
-                    </div>
-                </form>
+            <div class="box4">
+                <input type="password" name="userPassword" placeholder="비밀번호">
+                <img src="/img/LogIn_Image_4.png">
             </div>
-        </div>
-    </body>
+            <button type="submit" value="로그인" class="box5">로그인</button>
+        </form>
+    </div>
+</div>
+</body>
 </html>

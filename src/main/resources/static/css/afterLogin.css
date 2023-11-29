@@ -1,25 +1,25 @@
 body{
     margin: 0;
+    min-width:870px;
+    text-align:center;
+    align-items:center;
+    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 500px);
 }
 #topBox{
-    overflow:hidden;
-    height:1000px;
-    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 89.03%);
+    width:100%;
 }
 #analysis{
-    padding-top:50px;
-    float:left;
-    padding-left:20%;
+    align-items:center;
+    text-align:center;
+    margin-top:50px;
+    margin-left:max(100px,20%);
 }
 #analysisBox{
+    margin:auto;
+    width:250px;
     background-color :  rgba(85, 237, 82, 0.35);
     border-radius : 30px 30px 30px 30px;
     border-right : solid;
-}
-#streak{
-    padding-top:20px;
-    float:right;
-    padding-right:20%;
 }
 #goAnalysis{
     padding:10px;
@@ -28,16 +28,27 @@ body{
     color :rgb(0,0,0);
     text-decoration-line:none;
 }
+#streakBox{
+    width:max(400px,20%);
+    margin-right:max(100px,20%);
+    margin-top:50px;
+    text-align:center;
+}
 #streak{
-    font-size:50px;
+    font-size:250%;
     font-weight:bold;
-    width : 300px;
 }
 #label1{
-    position:absolute;
+    padding-top:100px;
+    margin:20px;
     width: 400px;
-    left:35%;
     top:400px;
     color: #000;
     font-size: 38px;
+}
+#navBack{
+    background-color: rgba(85, 237, 82, 0.35) 0%;
+}
+#card{
+    margin:auto;
 }

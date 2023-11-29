@@ -1,22 +1,22 @@
 body{
     margin: 0;
-    min-width:1007px;
-    min-height:750px;
+    min-width:870px;
     text-align:center;
     align-items:center;
-    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 89.03%);
+    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 500px);
 }
 #topBox{
-    float:left;
     width:100%;
 }
 #analysis{
     align-items:center;
+    text-align:center;
     margin-top:50px;
-    float:left;
     margin-left:max(100px,20%);
 }
 #analysisBox{
+    margin:auto;
+    width:250px;
     background-color :  rgba(85, 237, 82, 0.35);
     border-radius : 30px 30px 30px 30px;
     border-right : solid;
@@ -29,7 +29,6 @@ body{
     text-decoration-line:none;
 }
 #streakBox{
-    float:right;
     width:max(400px,20%);
     margin-right:max(100px,20%);
     margin-top:50px;
@@ -40,13 +39,16 @@ body{
     font-weight:bold;
 }
 #label1{
-    position:absolute;
+    padding-top:100px;
+    margin:20px;
     width: 400px;
-    left:35%;
     top:400px;
     color: #000;
     font-size: 38px;
 }
 #navBack{
     background-color: rgba(85, 237, 82, 0.35) 0%;
+}
+#card{
+    margin:auto;
 }

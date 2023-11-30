@@ -1,0 +1,39 @@
+body{
+    margin:0;
+}
+#searchBox{
+    margin-top:100px;
+    margin-bottom:75px;
+    align-items:center;
+    text-align:center;
+}
+#searchBtnImg{
+    width:40px;
+}
+#searchInput{
+    margin-top:10px;
+    width:60%;
+    font-size:35px;
+    padding-left:30px;
+}
+#searchLabel{
+    font-size:30px;
+}
+#searchedItemBox{
+    margin-left:50px;
+}
+#selectedItemBox{
+    margin:10px;
+    margin-right:50px;
+}
+#label{
+    font-size:20px;
+    color:black;
+    text-decoration:none;
+}
+#labelHead{
+    font-size:19px;
+    color:black;
+    text-decoration:none;
+    font-family:sans-serif;
+}

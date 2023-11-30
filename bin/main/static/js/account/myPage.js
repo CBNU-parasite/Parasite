@@ -18,7 +18,8 @@ new Chart(caloryGraph, {
         }
       }
     }
-  });
+  }
+);
 
 new Chart(pieChart,{
     type: 'pie',
@@ -35,4 +36,5 @@ new Chart(pieChart,{
             hoverOffset: 4
     }]
     }
-})
+  }
+)

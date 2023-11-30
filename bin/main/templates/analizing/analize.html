@@ -69,16 +69,51 @@
             </form>
         </div>
         <div class = "col">
-            <img src="../../static/img/sampleCircle.png" width = "200px" alt="..." class="rounded">
+            <canvas id = "total"></canvas>
+            <button class="btn btn-success" style="margin-right:40%;margin-top:5%;">저장하기</button>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+            <script src ="../../static/js/analizing/pieChart.js"></script>
         </div>
     </div>
     <div class = "row">
         <div class = "col" id = "searchedItemBox">
-            <a class = "row" id="label">list</a>
-            
+            <div class = "row">
+                <a class = "col" id = "label">음식 이름</a>
+                <a class = "col" id = "label">탄수화물</a>
+                <a class = "col" id = "label">단백질</a>
+                <a class = "col" id = "label">지방</a>
+            </div>
+            <div class = "row">
+                <button class="btn btn-light col-1" id="foodItem" style="font-size:18px">추가</button>
+                <a class = "col" id = "foodItem">돈까스</a>
+                <a class = "col" id = "foodItem" style = "text-align:center">130g</a>
+                <a class = "col" id = "foodItem" style = "text-align:center">22g</a>
+                <a class = "col" id = "foodItem" style = "text-align:center">18g</a>
+            </div>
+            <div class = "row">
+                <button class="btn btn-light col-1" id="foodItem" style="font-size:18px">추가</button>
+                <a class = "col" id = "foodItem">짜장면</a>
+                <a class = "col" id = "foodItem" style = "text-align:center">150g</a>
+                <a class = "col" id = "foodItem" style = "text-align:center">12g</a>
+                <a class = "col" id = "foodItem" style = "text-align:center">40g</a>
+            </div>
         </div>
         <div class = "col-2"id = "selectedItemBox">
-            <a class = "col" id="labelHead">|오늘 먹은 음식|</a>
+            <div class = "row" >
+                <a class = "col" id="labelHead">|오늘 먹은 음식|</a>
+            </div>
+            <div class = "row">
+                <a class = "col" id="label">군만두</a>
+                <button class="btn btn-secondary col" id="todayEat">삭제</button>
+            </div>
+            <div class = "row">
+                <a class = "col" id="label">군만두</a>
+                <button class="btn btn-secondary col" id="todayEat">삭제</button>
+            </div>
+            <div class = "row">
+                <a class = "col" id="label">군만두</a>
+                <button class="btn btn-secondary col" id="todayEat">삭제</button>
+            </div>
         </div>
     </div>
 

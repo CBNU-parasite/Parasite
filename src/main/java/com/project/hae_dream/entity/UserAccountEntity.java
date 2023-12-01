@@ -25,19 +25,23 @@ public class UserAccountEntity {
     private String userName;
 
     @Column
-    private String userAge;
+    private String userSex;
 
     @Column
-    private String userSex;
+    private String userWeight;
+
+    @Column
+    private String userTall;
 
     public static UserAccountEntity toUserAccountEntity(UserAccountDTO userAccountDTO){
         UserAccountEntity userAccountEntity = new UserAccountEntity();
         userAccountEntity.setId(userAccountDTO.getId());
         userAccountEntity.setUserId(userAccountDTO.getUserId());
         userAccountEntity.setUserPassword(userAccountDTO.getUserPassword());
-        userAccountEntity.setUserAge(userAccountDTO.getUserAge());
         userAccountEntity.setUserSex(userAccountDTO.getUserSex());
         userAccountEntity.setUserName(userAccountDTO.getUserName());
+        userAccountEntity.setUserTall(userAccountDTO.getUserTall());
+        userAccountEntity.setUserWeight(userAccountDTO.getUserWeight());
         return userAccountEntity;
     }
 

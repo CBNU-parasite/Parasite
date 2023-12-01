@@ -22,7 +22,7 @@ public class UserAccountController {
 
     private final UserAccountService userAccountService;
     @Autowired private HttpSession session;
-
+  
     @GetMapping("/user/signup")
     public String signForm(){
         return "account/signup";
@@ -63,8 +63,7 @@ public class UserAccountController {
         return "main/list";
     }
 
-
-    @GetMapping("/account/myPage")
+    @GetMapping("/account/mainPage")
     public String test(@ModelAttribute UserAccountDTO userAccountDTO, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
 

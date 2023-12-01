@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>save</title>
+    <link rel="stylesheet" href="/css/account/signup.css">
+    <title>Register</title>
 </head>
 <body>
-<!-- action 속성 : form에 작성한 데이터를 어디로 보낼지 지정 -->
-<form action="/user/signup" method="post"><!--    주솟값은 /member/save 이고 단순하게 get 이랑 post 의 차이는 주소창에 내가 보낼데이터가 보이냐/ 안보이냐 이다.-->
-    <!-- name 속성 : 서버로 전송할 때 변수 이름의 역할 -->
-    이름 : <input type="text" name="userName"><br>
+<div class="container">
+    <div class="box1">
+        <img src="/img/LogIn_Image_1.png" class="box1-image1">
+        <img src="/img/LogIn_Image_2.png" class="box1-image2">
+    </div>
+    <div class="box2">
+        <h1>회원가입</h1>
+        <form action="/user/signup" method="post">
+            <div class="box3">
+                <input type="text" name="userName" placeholder="이름">
+                <img src="/img/Register_Img_1.png">
+            </div>
+            <div class="box3">
+                <input type="text" name="userId" placeholder="아이디">
+                <img src="/img/Register_Img_2.png">
+            </div>
+            <div class="box4">
+                <input type="password" name="userPassword" placeholder="비밀번호">
+                <img src="/img/Register_Img_3.png">
+            </div>
+            <div class="box4">
+                <input type="text" name="userSex" placeholder="남, 여">
+                <img src="/img/Register_Img_5.png">
+            </div>
+            <div class="box4">
+                <input type="text" name="userTall" placeholder="키">
+                <img src="/img/Register_Img_7.png">
+            </div>
+            <div class="box4">
+                <input type="text" name="userWeight" placeholder="몸무게">
+                <img src="/img/Register_Img_6.png">
+            </div>
 
-    아이디 : <input type="text" name="userId"><br> <!--//사용자가 text로 작성한 값이 memberEmail 에 담긴다.-->
-    <!--name과 DTO의 필드가 동일하다면, 알아서 스피링이 DTO의 객체를 하나 만들어서 그 객체의 set메서드를 호출하면서(getter, setter가 다 해줌) 여기서 작성한 값을 알아서 DTO에 담아준다.-->
-    비밀번호 : <input type="password" name="userPassword"><br> <!--// 사용자가 password로 작성한 값이 memberPassword에 담긴다.-->
-    <!--input 태그의 type이 password 이기때문에 입력값이 점으로 보임!-->
-    나이 : <input type="text" name="userAge"><br>
-
-    성별 : <input type="text" name="userSex"><br>
-
-    <input type="submit" value="회원가입"><!--// 이건 버튼처럼 보이게 되는데 이 버튼을 클릭하면 작성된 이메일, 비밀번호, 이름을 가지고 /member/save 로 간다. post 방식으로-->
-</form>
+            <div>
+                <button type="submit" class="box5">회원가입</button>
+            </div>
+        </form>
+    </div>
+</div>
 </body>
 </html>

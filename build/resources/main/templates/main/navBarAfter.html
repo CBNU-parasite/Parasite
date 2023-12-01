@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-  <link rel="stylesheet" href = "../../statics/css/navBar.css">
+  <link rel="stylesheet" href = "../../static/css/navBar.css">
   <title>navbar</title>
 </head>
 
@@ -18,22 +18,35 @@
   <nav class="navbar sticky-top navbar-expand-lg navbar-light" id = "navbar" style="background-color: rgb(255, 255, 255)">
     <div class="container">
       <!-- 로고 부분 -->
-      <a class="navbar-brand" href="">
-        <img src="../../statics/img/logo.png" alt="" width="100px"
+      <a class="navbar-brand col" href="">
+        <img src="../../static/img/logo.png" alt="" width="100px"
           class="d-inline-block align-text-center" />
       </a>
       <!-- 네비게이션 바 구성요소들 -->
       <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
-        <div class="col-md">
-          <ul class="navbar-nav">
-            <li class="nav-item" id="nav_item">
-              <a class="nav-link" href=""></a>
-            </li>
-          </ul>
+        <div class = "col-4">
+          <nav style = "margin-left:20px" class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="../../static/img/foodImage.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                게시판
+              </a>
+            </div>
+          </nav>
         </div>
-        <div class="col-auto">
+        <div class = "col-4">
+          <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="../../static/img/glass.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                분석하기
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class = "col">
           <!-- 우측 홈페이지, 로그아웃 버튼 -->
-          <ul class="navbar-nav">
+            <ul class="navbar-nav">
               <li class = "nav-item" id="nav_item">
                 <a class = "nav-link" href="">로그인 /</a>
               </li>

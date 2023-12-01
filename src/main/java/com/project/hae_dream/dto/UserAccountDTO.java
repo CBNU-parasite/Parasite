@@ -16,8 +16,10 @@ public class UserAccountDTO {
     private String userPassword;
     private String userName;
     private String userId;
-    private String userAge;
     private String userSex;
+    private String userWeight;
+    private String userTall;
+
 
     public static UserAccountDTO toUserAccountDTO(UserAccountEntity userAccountEntity){
         UserAccountDTO userAccountDTO = new UserAccountDTO();
@@ -25,8 +27,9 @@ public class UserAccountDTO {
         userAccountDTO.setUserId(userAccountEntity.getUserId());
         userAccountDTO.setUserName(userAccountEntity.getUserName());
         userAccountDTO.setUserPassword(userAccountEntity.getUserPassword());
-        userAccountDTO.setUserAge(userAccountEntity.getUserAge());
         userAccountDTO.setUserSex(userAccountEntity.getUserSex());
+        userAccountDTO.setUserTall(userAccountEntity.getUserTall());
+        userAccountDTO.setUserWeight(userAccountEntity.getUserWeight());
         return userAccountDTO;
     }
 }

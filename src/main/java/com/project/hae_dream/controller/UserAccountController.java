@@ -19,8 +19,10 @@ import java.util.List;
 @RequiredArgsConstructor
 @SessionAttributes()
 public class UserAccountController {
+
     private final UserAccountService userAccountService;
     @Autowired private HttpSession session;
+  
     @GetMapping("/user/signup")
     public String signForm(){
         return "account/signup";
@@ -60,7 +62,6 @@ public class UserAccountController {
         model.addAttribute("userAccountList", userAccountDTOList);
         return "main/list";
     }
-
 
     @GetMapping("/account/mainPage")
     public String test(@ModelAttribute UserAccountDTO userAccountDTO, HttpServletRequest request) {

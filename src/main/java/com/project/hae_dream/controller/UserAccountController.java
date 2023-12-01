@@ -61,6 +61,7 @@ public class UserAccountController {
         return "main/list";
     }
 
+
     @GetMapping("/account/mainPage")
     public String test(@ModelAttribute UserAccountDTO userAccountDTO, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -71,5 +72,4 @@ public class UserAccountController {
 
         return "main/mainPage";
     }
-
 }

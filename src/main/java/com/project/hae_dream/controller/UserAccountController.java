@@ -73,4 +73,9 @@ public class UserAccountController {
 
         return "main/mainPage";
     }
+
+    @GetMapping("/signup")
+    public String signupPage(){
+        return "/account/signup";
+    }
 }

@@ -57,7 +57,7 @@
 
     <div th:replace="~{../main/navBar :: navigation}"></div>
     <div class = "row" id ="searchBox">
-        <div class ="col-9">
+        <div >
             <form action ="" method = "POST">
                 <input id = "searchInput" type="text" placeholder="음식을 검색해 주세요">
                 <button class = "btn btn-secondary" style="margin-bottom:14px;"
@@ -67,16 +67,19 @@
                 </button>
             </form>
         </div>
-        <div class = "col">
-            <canvas id = "total"></canvas>
-            <button class="btn btn-success" style="margin-right:40%;margin-top:5%;">저장하기</button>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-            <script src ="../../static/js/analizing/pieChart.js"></script>
-        </div>
     </div>
-    <div class = "row">
+    <div class = "row" style="max-width:98%">
+        <div class = "col-2" id = "menuBar">
+            <div class = "row">
+                <a id="label" href="">등록하기</a>
+            </div>
+            <div class = "row">
+                <a id="label" href="">분석 및 저장</a>
+            </div>
+        </div>
         <div class = "col" id = "searchedItemBox">
             <div class = "row">
+                <a class = "col-1" id = "label"></a>
                 <a class = "col" id = "label">음식 이름</a>
                 <a class = "col" id = "label">탄수화물</a>
                 <a class = "col" id = "label">단백질</a>
@@ -115,5 +118,4 @@
             </div>
         </div>
     </div>
-
 </body>

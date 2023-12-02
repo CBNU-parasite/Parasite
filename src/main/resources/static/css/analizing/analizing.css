@@ -3,6 +3,7 @@ body{
     min-width:1168px;
 }
 #searchBox{
+    margin-top:75px;
     margin-bottom:75px;
     align-items:center;
     text-align:center;
@@ -20,7 +21,6 @@ body{
     font-size:30px;
 }
 #searchedItemBox{
-    margin-left:50px;
     padding:10px;
     padding-left:30px;
     background-color: rgba(85, 237, 82, 0.35);
@@ -65,4 +65,12 @@ body{
 #total{
     max-width:200px;
     max-height:200px;
+}
+#menuBar{
+    margin:10px;
+    margin-left:50px;
+    background-color: rgba(85, 237, 82, 0.35);
+    border-radius:20px;
+    border-style:solid;
+    max-height:110px;
 }

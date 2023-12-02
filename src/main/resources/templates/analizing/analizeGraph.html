@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel = "stylesheet" href="../../static/css/analizing/analizing.css">
+    <link rel = "stylesheet" href="../../static/css/analizing/analizingGraph.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <meta charset="utf-8" />
     <link rel="stylesheet" href = "../../static/css/navBar.css">
@@ -53,13 +53,11 @@
         </div>
     </nav>
 
-
-
     <div th:replace="~{../main/navBar :: navigation}"></div>
-    <div class = "row" id ="header">
+    <div class = "row" id ="header" style="max-width:90%">
         <h1 style="font-weight:bold">분석 및 저장</h1>
     </div>
-    <div class = "row" style="max-width:98%">
+    <div class = "row" style="max-width:90%">
         <div class = "col-2" id = "menuBar">
             <div class = "row">
                 <a id="label" href="">등록하기</a>
@@ -68,19 +66,40 @@
                 <a id="label" href="">분석 및 저장</a>
             </div>
         </div>
-        <div class = "col" id = "graphBox">
+        <div class = "col">
             <div id = "contents">
-                <div class = "row">
-                    <a class = "col" id = "labelGraph">탄단지 그래프</a>
+                <div class = "row" id = "graphBox">
+                    <div class = "col">
+                        <a class = "col" id = "labelGraph">|오늘 내가 섭취한 음식들|</a>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                    </div>
                     <canvas class = "col" id = "tdgGraph"></canvas>
+                    <div class = "row">
+                        <button type="button" class="btn btn-outline-info">저장하기</button>
+                    </div>
                 </div>
-                <div class = "row">
-                    <a class = "row" id = "labelGraph">성분 그래프</a>
+                <div class = "row" id = "graphBox">
+                    <a class = "col" id = "labelGraph" >성분 그래프</a>
                     <canvas class = "row" id = "detailed"></canvas>
                 </div>
 
                 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-                <script src="../../static/js/account/myPage.js"></script>
+                <script src="../../static/js/analizing/graph.js"></script>
             </div>
         </div>
     </div>

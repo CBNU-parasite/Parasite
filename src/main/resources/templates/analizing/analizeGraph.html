@@ -56,19 +56,10 @@
 
 
     <div th:replace="~{../main/navBar :: navigation}"></div>
-    <div class = "row" id ="searchBox">
-        <div >
-            <form action ="" method = "POST">
-                <input id = "searchInput" type="text" placeholder="음식을 검색해 주세요">
-                <button class = "btn btn-secondary" style="margin-bottom:14px;"
-                type="submit">
-                    <img src = "../../static/img/glass.png" id ="searchBtnImg">
-                    <a id = "searchLabel">검색</a>
-                </button>
-            </form>
-        </div>
+    <div class = "row" id ="header">
+        <h1 style="font-weight:bold">분석 및 저장</h1>
     </div>
-    <div class = "row">
+    <div class = "row" style="max-width:98%">
         <div class = "col-2" id = "menuBar">
             <div class = "row">
                 <a id="label" href="">등록하기</a>
@@ -77,45 +68,20 @@
                 <a id="label" href="">분석 및 저장</a>
             </div>
         </div>
-        <div class = "col" id = "searchedItemBox">
-            <div class = "row">
-                <a class = "col" id = "label">음식 이름</a>
-                <a class = "col" id = "label">탄수화물</a>
-                <a class = "col" id = "label">단백질</a>
-                <a class = "col" id = "label">지방</a>
-            </div>
-            <div class = "row">
-                <button class="btn btn-light col-1" id="foodItem" style="font-size:18px">추가</button>
-                <a class = "col" id = "foodItem">돈까스</a>
-                <a class = "col" id = "foodItem" style = "text-align:center">130g</a>
-                <a class = "col" id = "foodItem" style = "text-align:center">22g</a>
-                <a class = "col" id = "foodItem" style = "text-align:center">18g</a>
-            </div>
-            <div class = "row">
-                <button class="btn btn-light col-1" id="foodItem" style="font-size:18px">추가</button>
-                <a class = "col" id = "foodItem">짜장면</a>
-                <a class = "col" id = "foodItem" style = "text-align:center">150g</a>
-                <a class = "col" id = "foodItem" style = "text-align:center">12g</a>
-                <a class = "col" id = "foodItem" style = "text-align:center">40g</a>
-            </div>
-        </div>
-        <div class = "col-2"id = "selectedItemBox">
-            <div class = "row" >
-                <a class = "col" id="labelHead">|오늘 먹은 음식|</a>
-            </div>
-            <div class = "row">
-                <a class = "col" id="label">군만두</a>
-                <button class="btn btn-secondary col" id="todayEat">삭제</button>
-            </div>
-            <div class = "row">
-                <a class = "col" id="label">군만두</a>
-                <button class="btn btn-secondary col" id="todayEat">삭제</button>
-            </div>
-            <div class = "row">
-                <a class = "col" id="label">군만두</a>
-                <button class="btn btn-secondary col" id="todayEat">삭제</button>
+        <div class = "col" id = "graphBox">
+            <div id = "contents">
+                <div class = "row">
+                    <a class = "col" id = "labelGraph">탄단지 그래프</a>
+                    <canvas class = "col" id = "tdgGraph"></canvas>
+                </div>
+                <div class = "row">
+                    <a class = "row" id = "labelGraph">성분 그래프</a>
+                    <canvas class = "row" id = "detailed"></canvas>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+                <script src="../../static/js/account/myPage.js"></script>
             </div>
         </div>
     </div>
-
 </body>

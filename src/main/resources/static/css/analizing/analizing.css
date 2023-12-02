@@ -74,3 +74,11 @@ body{
     border-style:solid;
     max-height:110px;
 }
+#graphBox{
+    padding:30px;
+    margin:10px;
+    margin-right:50px;
+    background-color: rgba(85, 237, 82, 0.35);
+    border-radius:20px;
+    border-style:solid;
+}

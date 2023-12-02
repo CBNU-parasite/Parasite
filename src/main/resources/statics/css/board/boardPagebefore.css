@@ -1,0 +1,10 @@
+#PostIt{
+    position: relative;
+    left: 8px;
+}
+
+#boardTitle{
+   position: relative;
+   left: 30%;
+   padding-bottom: 5%;
+}

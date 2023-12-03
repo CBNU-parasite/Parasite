@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel = "stylesheet" href="../../static/css/analizing/analizingGraph.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href = "../../static/css/navBar.css">
+    <title>Analyze</title>
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light" id = "navbar" style="background-color: rgb(255, 255, 255)">
+        <div class="container">
+        <!-- 로고 부분 -->
+        <a class="navbar-brand col" href="">
+            <img src="../../static/img/logo.png" alt="" width="100px"
+            class="d-inline-block align-text-center" />
+        </a>
+        <!-- 네비게이션 바 구성요소들 -->
+        <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
+            <div class = "col-4">
+            <nav style = "margin-left:20px" class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../../static/img/foodImage.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    게시판
+                </a>
+                </div>
+            </nav>
+            </div>
+            <div class = "col-4">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../../static/img/glass.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    분석하기
+                </a>
+                </div>
+            </nav>
+            </div>
+            <div class = "col">
+            <!-- 우측 홈페이지, 로그아웃 버튼 -->
+                <ul class="navbar-nav">
+                <li class = "nav-item" id="nav_item">
+                    <a class = "nav-link" href="">로그인 /</a>
+                </li>
+                <li class = "nav-item" id="nav_item">
+                    <a class = "nav-link" href="">회원가입</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div th:replace="~{../main/navBar :: navigation}"></div>
+    <div class = "row" id ="header" style="max-width:90%">
+        <h1 style="font-weight:bold">분석 및 저장</h1>
+    </div>
+    <div class = "row" style="max-width:90%">
+        <div class = "col-2" id = "menuBar">
+            <div class = "row">
+                <a id="label" href="">등록하기</a>
+            </div>
+            <div class = "row">
+                <a id="label" href="">분석 및 저장</a>
+            </div>
+        </div>
+        <div class = "col">
+            <div id = "contents">
+                <div class = "row" id = "graphBox">
+                    <div class = "col">
+                        <a class = "col" id = "labelGraph">|오늘 내가 섭취한 음식들|</a>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                        <div class = "row">
+                            <a class = "col" id="label">군만두</a>
+                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                        </div>
+                    </div>
+                    <canvas class = "col" id = "tdgGraph"></canvas>
+                    <div class = "row">
+                        <button type="button" class="btn btn-outline-info">저장하기</button>
+                    </div>
+                </div>
+                <div class = "row" id = "graphBox">
+                    <a class = "col" id = "labelGraph" >성분 그래프</a>
+                    <canvas class = "row" id = "detailed"></canvas>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+                <script src="../../static/js/analizing/graph.js"></script>
+            </div>
+        </div>
+    </div>
+</body>

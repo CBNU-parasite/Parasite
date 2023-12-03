@@ -1,0 +1,55 @@
+body{
+    margin:0;
+    min-width:1168px;
+}
+#menuBar{
+    margin:10px;
+    margin-left:50px;
+    background-color: rgba(85, 237, 82, 0.35);
+    border-radius:20px;
+    border-style:solid;
+    max-height:110px;
+}
+#label{
+    margin-top:15px;
+    font-size:20px;
+    color:black;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    align-items:center;
+}
+#header{
+    text-align:center;
+    margin-top:80px;
+    margin-bottom:80px;
+}
+#contents{
+    margin:10px;
+    background-color: rgba(85, 237, 82, 0.35);
+    border-radius:20px;
+    border-style:solid;
+    padding:50px;
+}
+#labelGraph{
+    font-size:20px;
+    color:black;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    align-items:center;
+    border-left:10px;
+    border-right:10px;
+}
+#tdgGraph{
+    max-width:300px;
+    max-height:300px;
+}
+#graphBox{
+    margin:10px;
+    background-color:white;
+    text-align:center;
+    align-items:center;
+    padding:20px;
+    border-radius:20px 20px 20px 20px;
+}

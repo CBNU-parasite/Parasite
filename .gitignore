@@ -603,3 +603,5 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,java,gradle,intellij+all,windows,visualstudio
+bin/main/com/project/hae_dream/controller/UserAccountController.class
+bin/main/templates/account/login.html

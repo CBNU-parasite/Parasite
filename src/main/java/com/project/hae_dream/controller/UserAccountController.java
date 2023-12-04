@@ -48,7 +48,7 @@ public class UserAccountController {
         if(loginResult!=null){
             // 로그인 성공
             session.setAttribute("loginId",loginResult.getUserId());
-            return "main/main";
+            return "main/mainPage";
         }
         else{
             //로그인 실패

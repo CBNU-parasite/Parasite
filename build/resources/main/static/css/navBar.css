@@ -1,34 +1,23 @@
+@font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 body{
     margin: 0;
 }
 #nav_item{
     min-width: 100px;
+    font-family: 'SOYOMapleBoldTTF';
     font-size:24px;
     font-weight:bold;
     justify-content: center;
-    color :rgb(255, 255, 255);
-}
-#goBox{
-    width : 210px;
-    background-color :rgb(255, 255, 255);
-    border-radius : 30px 30px 30px 30px;
-    border-style : solid;
-}
-#goText{
-    font-size:24px;
-    font-weight:bold;
-    color :rgb(0,0,0);
-    text-decoration-line:none;
+    color:black;
 }
 #navbar{
     border-style : none none solid none;
     border-radius : 0% 0% 22% 22%;
-}
-#footer {
-    position: fixed;
-    left: 45%;
-    right: 45%;
-    bottom: 3%;
 }
 #glass{
     padding-left:10px;

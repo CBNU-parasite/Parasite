@@ -61,3 +61,13 @@ body{
     padding:20px;
     border-radius:20px 20px 20px 20px;
 }
+#todayEat{
+    font-family:SOYOMapleBoldTTF;
+    margin:15px;
+    font-size:20px;
+    color:black;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    align-items:center;
+}

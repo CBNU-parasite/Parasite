@@ -68,6 +68,7 @@ body{
     text-decoration:none;
     padding-left:20px;
     margin-top:10px;
+    text-align:center;
 }
 #todayEat{
     font-family:SOYOMapleBoldTTF;
@@ -93,4 +94,8 @@ body{
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
     border-style:solid;
+}
+#submitBtn{
+    margin: 10px;
+    border-radius: 10px;
 }

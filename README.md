@@ -3,7 +3,7 @@ WebSite_Project from OpenSource development project class
 ____
 ## Introduction
 ### Do
-- Analizing nutrient from daily meal
+- Analyzing nutrient from daily meal
 - Visualizing nutrient from every diet
 - Sharing what you eat on "God Life" community
 ### Use

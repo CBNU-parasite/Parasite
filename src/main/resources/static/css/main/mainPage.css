@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 body{
     margin: 0;
     min-width:870px;
@@ -6,7 +12,10 @@ body{
     background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 500px);
 }
 #topBox{
-    width:100%;
+    width:80%;
+    margin:auto;
+    align-items:center;
+    text-align:center;
 }
 #analysis{
     align-items:center;
@@ -38,13 +47,8 @@ body{
     font-size:250%;
     font-weight:bold;
 }
-#label1{
-    padding-top:100px;
-    margin:20px;
-    width: 400px;
-    top:400px;
-    color: #000;
-    font-size: 38px;
+#graph{
+    width:50%;
 }
 #navBack{
     background-color: rgba(85, 237, 82, 0.35) 0%;
@@ -52,4 +56,16 @@ body{
 #card{
     margin:auto;
     margin-top:15px;
+}
+#label{
+    font-family:SOYOMapleBoldTTF;
+    font-size:40px;
+    color:black;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+    align-items:center;
+    border-left:10px;
+    border-right:10px;
+    margin:100px;
 }

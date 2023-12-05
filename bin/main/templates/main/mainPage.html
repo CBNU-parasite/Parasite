@@ -17,20 +17,50 @@
   <!-- 기본 템플릿 안에 삽입될 내용 Start -->
   <!-- 네비게이션 바 시작 부분 -->
   <div th:replace="~{/main/navBar :: headerFragment}"></div>
-  <div class = "row" id = "topBox">
-      <div class = "col" id = "analysis">
-          <img src = "/img/Graph.png" width = 150px>
-          <div id = "analysisBox">
-              <a class = "text-dark" id = 'goAnalysis' href = "/analyze/search">분석하러가기</a>
-          </div>
-      </div>
-      <div class = "col" id = "streakBox">
+
+  <ul th:if="${log != 'logIn'}">
+    <div class = "row" id = "topBox">
+        <div class = "col" id = "analysis">
+            <img src = "/img/Graph.png" width = 150px>
+            <div id = "analysisBox">
+                <a class = "text-dark" id = 'goAnalysis' href = "/analyze/analyzeSearch">분석하러가기</a>
+            </div>
+        </div>
+        <div class = "col" id = "streakBox">
           <a id = "streak">OOO님은<br>0일 째<br>갓생사는 중</a>
-      </div>        
-  </div>
+        </div>
+    </div>
+  </ul>
+  <ul th:if="${log == 'logIn'}">
+    <div class = "row" id = "topBox">
+      <a class = "col" id="label">영양 상태는 건강하신가요?</a>
+      <div class ="row">
+        <img class = "col" id = "graph" src="/img/examGraph2.png">
+        <a class = "col" id ="label" >그래프를 통해 분석하세요.</a>
+      </div>
+      <div class = "row">
+        <a class = "col" id = "label">당신의 식단을 등록하세요.</a>
+        <img class = "col" id = "graph" src="/img/examGraph1.png">
+      </div>
+      <div class = "row" >
+        <div class="card col" id = "card">
+          <div class="row">
+            <img src="/img/sampleFoodBeer.jpg"  class="col" style="width:200px;height:300px;margin:0px">
+            <div class="col" id="topBox" >
+              <a class = "col" id ="label" style="margin:auto;font-size:20px">맥주!!<br></a>
+              <a class = "col" id ="label" style="margin:auto;font-size:11px">2023-11-28<br></a>
+              <a class = "col" id ="label" style="margin:auto;font-size:11px">EmperorChan<br></a>
+              <btn class="btn btn-outline-danger"style="font-size:11px" onclick = "iLikeIt(this)">♡</btn>
+            </div>
+          </div>
+        </div>
+        <a class = "col" id="label">식단을 공유해볼까요?</a>
+      </div>
+    </div>
+  </ul>
   <div class="row" style="max-width:98%">
     <div class = "row">
-      <a class = "col"id = "label1">다른 사람들은<br>어떻게 하고 있을까요?</a>
+      <a class = "col"id = "label" style="text-decoration:;">다른 사람들은<br>어떻게 하고 있을까요?</a>
     </div>
     <div class =  "row justify-content-center">
       <div class="card col-4" id = "card">

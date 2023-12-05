@@ -51,7 +51,7 @@ public class UserAccountController {
             // 로그인 성공
             session.setAttribute("loginId",loginResult.getUserId());
             log.info("로그인 성공 - {}", loginResult.getUserId());
-            return "redirect:/";
+            return "redirect:/index";
         }
         else{
             //로그인 실패
@@ -65,7 +65,7 @@ public class UserAccountController {
 
         session.removeAttribute("loginId");
 
-        return "redirect:/";
+        return "redirect:/index";
     }
 
     @GetMapping("/user/")
@@ -90,5 +90,14 @@ public class UserAccountController {
     @GetMapping("/signup")
     public String signupPage(){
         return "/account/signup";
+    }
+
+    @GetMapping("/account/myPage")
+    public String myPage(){
+        return "/account/myPage";
+    }
+    @GetMapping("/account/myInfo")
+    public String myInfo(){
+        return "/account/myInfo";
     }
 }

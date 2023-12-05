@@ -26,6 +26,7 @@
     <div th:if="${foodInfo}">
       <h2>Search Results:</h2>
       <ul >
+        <!-- each 돌린 후 음식 이름 : food.foodName, 열량 : food.NUTR_CONT1, 탄수화물 : food.NUTR_CONT2, 단백질 : food.NUTR_CONT3, 지방 : food.NUTR_CONT4       -->
         <li th:each="food : ${foodInfo}" th:text="${food.foodName}"></li>
       </ul>
     </div>

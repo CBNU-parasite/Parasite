@@ -3,6 +3,7 @@ package com.project.hae_dream.controller;
 import com.project.hae_dream.dto.UserAccountDTO;
 import com.project.hae_dream.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 @SessionAttributes()
@@ -41,20 +43,31 @@ public class UserAccountController {
     }
 
     @PostMapping("/user/login")
-    public String login(@ModelAttribute UserAccountDTO userAccountDTO, HttpSession session){
-        System.out.println("UserAccountController.login"); //잘 넘어가느 지확인
-        System.out.println("userAccountDTO = " + userAccountDTO);// 잘넘어가는지 확인
+    public String login(@ModelAttribute UserAccountDTO userAccountDTO){
+        log.info("UserAccountController.login"); //잘 넘어가느 지확인
+        log.info("userAccountDTO = {}", userAccountDTO);// 잘넘어가는지 확인
         UserAccountDTO loginResult = userAccountService.login(userAccountDTO);
         if(loginResult!=null){
             // 로그인 성공
             session.setAttribute("loginId",loginResult.getUserId());
-            return "main/mainPage";
+            log.info("로그인 성공 - {}", loginResult.getUserId());
+            return "redirect:/";
         }
         else{
             //로그인 실패
             return "account/login";
         }
     }
+
+    @GetMapping("/user/logout")
+    public String logout(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+
+        session.removeAttribute("loginId");
+
+        return "redirect:/";
+    }
+
     @GetMapping("/user/")
     public String findAll(Model model ){
         List<UserAccountDTO> userAccountDTOList = userAccountService.findAll();

@@ -20,12 +20,14 @@ import java.util.List;
 public class analyzeController {
 
     @GetMapping("/analyze/analyzeSearch")
-    public String analyzeSearch(HttpServletRequest request) {
+    public String analyzeSearch(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("loginId") == null) {
             return "redirect:/user/login";
         } else {
+            model.addAttribute("userName", session.getAttribute("userName"));
+            model.addAttribute("log", "logOut");
             return "analyze/analyzeSearch";
         }
     }

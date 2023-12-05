@@ -50,6 +50,7 @@ public class UserAccountController {
         if(loginResult!=null){
             // 로그인 성공
             session.setAttribute("loginId",loginResult.getUserId());
+            session.setAttribute("userName", loginResult.getUserName());
             log.info("로그인 성공 - {}", loginResult.getUserId());
             return "redirect:/index";
         }

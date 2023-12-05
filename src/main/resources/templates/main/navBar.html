@@ -43,15 +43,15 @@
             <!-- 우측 홈페이지, 로그아웃 버튼 -->
               <ul th:if="${log == 'logIn'}" class="navbar-nav">
                 <li class = "nav-item">
-                  <a class = "nav-link" id="nav_item" href="/user/login">로그인 /</a>
+                  <a class = "nav-link" id="nav_item" href="/user/login">로그인 &nbsp;&nbsp;/</a>
                 </li>
                 <li class = "nav-item">
                   <a class = "nav-link" id="nav_item" href="/user/signup">회원가입</a>
                 </li>
               </ul>
               <ul th:if="${log != 'logIn'}" class="navbar-nav">
-                <li class = "nav-item">
-                  <a class = "nav-link" id="nav_item" href="/account/myPage">ExamId</a>
+                <li th:if="${userName}" class = "nav-item">
+                  <a th:utext="${userName} + '님&nbsp;&nbsp;/'" class = "nav-link" id="nav_item" href="/user/login">000님 /</a>
                 </li>
                 <li class = "nav-item">
                   <a class = "nav-link" id="nav_item" href="/user/logout">로그아웃</a>

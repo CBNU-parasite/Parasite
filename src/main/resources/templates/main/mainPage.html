@@ -26,8 +26,8 @@
                 <a class = "text-dark" id = 'goAnalysis' href = "/analyze/analyzeSearch">분석하러가기</a>
             </div>
         </div>
-        <div class = "col" id = "streakBox">
-          <a id = "streak">OOO님은<br>0일 째<br>갓생사는 중</a>
+        <div th:if="${userInfo}" class = "col" id = "streakBox">
+          <a th:utext="${userInfo['userName']} + '님은<br>' + ${userInfo['days']} + '일 째<br>갓생사는 중'" id = "streak">OOO님은<br>0일 째<br>갓생사는 중</a>
         </div>
     </div>
   </ul>

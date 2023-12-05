@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!-- 게시물 등록페이지-->
 <head>
     <meta charset="utf-8" />
@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <div th:replace="~{/main/navBar :: headerFragment}"></div>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light" id = "navbar" style="background-color: rgb(255, 255, 255)">
         <div class="container">
           <!-- 로고 부분 -->

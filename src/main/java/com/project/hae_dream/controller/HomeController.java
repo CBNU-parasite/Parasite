@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Controller
 public class HomeController {
-    @GetMapping("/")
+    @GetMapping("/index")
     public String index(Model model, HttpServletRequest request){
 
         HttpSession session = request.getSession(false);

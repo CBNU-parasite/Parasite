@@ -18,20 +18,42 @@
   <!-- 네비게이션 바 시작 부분 -->
   <div th:replace="~{/main/navBar :: headerFragment}"></div>
 
-  <div class = "row" id = "topBox">
-      <div class = "col" id = "analysis">
-          <img src = "/img/Graph.png" width = 150px>
-          <div id = "analysisBox">
-              <a class = "text-dark" id = 'goAnalysis' href = "/analyze/analyzeSearch">분석하러가기</a>
-          </div>
-      </div>
-      <div class = "col" id = "streakBox">
+  <ul th:if="${log != 'logIn'}">
+    <div class = "row" id = "topBox">
+        <div class = "col" id = "analysis">
+            <img src = "/img/Graph.png" width = 150px>
+            <div id = "analysisBox">
+                <a class = "text-dark" id = 'goAnalysis' href = "/analyze/analyzeSearch">분석하러가기</a>
+            </div>
+        </div>
+        <div class = "col" id = "streakBox">
           <a id = "streak">OOO님은<br>0일 째<br>갓생사는 중</a>
-      </div>        
-  </div>
+        </div>
+    </div>
+  </ul>
+  <ul th:if="${log == 'logIn'}">
+    <div class = "row" id = "topBox">
+      <div class = "col-3">
+        <a class = "row" id="label">먹은 것을 등록하세요!</a>
+        <div class="card col" id = "card">
+          <img src="/img/sampleFoodBeer.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title" id="label">맥주!!!!</h5>
+            <p class="card-text" id="label">2023-11-28<br>author</p>
+            <btn class="btn btn-outline-danger"style="font-size:20px">♥</btn>
+          </div>
+        </div>
+      </div>
+      <div class = "col">
+        <a class = "row" id="label">영양 상태는 건강하신가요?</a>
+        <img class = "row" id = "graph" src="/img/examGraph1.png">
+        <img class = "row" id = "grpah" src="/img/examGraph2.png">
+      </div>
+    </div>
+  </ul>
   <div class="row" style="max-width:98%">
     <div class = "row">
-      <a class = "col"id = "label1">다른 사람들은<br>어떻게 하고 있을까요?</a>
+      <a class = "col"id = "label" style="text-decoration:;">다른 사람들은<br>어떻게 하고 있을까요?</a>
     </div>
     <div class =  "row justify-content-center">
       <div class="card col-4" id = "card">

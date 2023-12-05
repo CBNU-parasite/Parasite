@@ -1,14 +1,24 @@
-body{
-    margin:0;
-    align-items:center;
-    min-width:924px;
+@font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
+
+body{
+    margin: 0;
+    min-width:870px;
+    text-align:center;
+    align-items:center;
+    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0px, rgba(85, 237, 82, 0.00) 500px);
+}
+
 #title{
+    font-family:SOYOMapleBoldTTF;
     top:5%;
     text-align:center;
     font-size:40px;
     font-weight: bold;
-    background:linear-gradient(180deg, rgba(85, 237, 82, 0.35) 0%, rgba(85, 237, 82, 0.00) 89.03%);
     min-height: 200px;
 }
 #leftBar{
@@ -24,6 +34,7 @@ body{
     border-style:solid;
 }
 #barItem{
+    font-family:SOYOMapleBoldTTF;
     font-size:24px;
     font-weight:bold;
     color :rgb(0,0,0);
@@ -35,6 +46,7 @@ body{
     height:max-content;
     float:right;
     margin-right:10%;
+    margin-bottom:100px;
     border-radius:40px;
     border-style:solid;
     align-items:center;
@@ -47,16 +59,19 @@ body{
     border-radius:10px;
 }
 #label{
+    font-family:SOYOMapleBoldTTF;
     font-size:25px;
     color:black;
     text-decoration:none;
 }
 #inputBox{
+    font-family:SOYOMapleBoldTTF;
     font-size:25px;
     border:groove;
     width:200px;
 }
 #btn{
+    font-family:SOYOMapleBoldTTF;
     margin-bottom:20px;
     margin-left:40%;
 }

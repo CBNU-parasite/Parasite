@@ -49,7 +49,7 @@
                   <a class = "nav-link" id="nav_item" href="/user/signup">회원가입</a>
                 </li>
               </ul>
-              <ul th:if="${log == 'logOut'}" class="navbar-nav">
+              <ul th:if="${log != 'logIn'}" class="navbar-nav">
                 <li class = "nav-item">
                   <a class = "nav-link" id="nav_item" href="/account/myPage">ExamId</a>
                 </li>

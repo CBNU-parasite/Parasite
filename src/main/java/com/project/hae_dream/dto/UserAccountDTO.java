@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
-@NoArgsConstructor
 @ToString
-
 public class UserAccountDTO {
     private Long id;
     private String userPassword;
@@ -19,7 +19,11 @@ public class UserAccountDTO {
     private String userSex;
     private String userWeight;
     private String userTall;
+    private LocalDateTime createdAt;
 
+    public UserAccountDTO() {
+        this.createdAt = LocalDateTime.now();
+    }
 
     public static UserAccountDTO toUserAccountDTO(UserAccountEntity userAccountEntity){
         UserAccountDTO userAccountDTO = new UserAccountDTO();
@@ -30,6 +34,8 @@ public class UserAccountDTO {
         userAccountDTO.setUserSex(userAccountEntity.getUserSex());
         userAccountDTO.setUserTall(userAccountEntity.getUserTall());
         userAccountDTO.setUserWeight(userAccountEntity.getUserWeight());
+        userAccountDTO.setCreatedAt(userAccountEntity.getCreatedAt());
+
         return userAccountDTO;
     }
 }

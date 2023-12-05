@@ -12,49 +12,9 @@
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light" id = "navbar" style="background-color: rgb(255, 255, 255)">
-        <div class="container">
-          <!-- 로고 부분 -->
-          <a class="navbar-brand col" href="">
-            <img src="/img/logo.png" alt="" width="100px"
-              class="d-inline-block align-text-center" />
-          </a>
-          <!-- 네비게이션 바 구성요소들 -->
-          <div class="collapse navbar-collapse" id="navbarDropdownMenuLink">
-            <div class = "col-4">
-              <nav style = "margin-left:20px" class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">
-                    <img src="/img/foodImage.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    게시판
-                  </a>
-                </div>
-              </nav>
-            </div>
-            <div class = "col-4">
-              <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">
-                    <img src="/img/glass.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                    분석하기
-                  </a>
-                </div>
-              </nav>
-            </div>
-            <div class = "col">
-              <!-- 우측 홈페이지, 로그아웃 버튼 -->
-                <ul class="navbar-nav">
-                  <li class = "nav-item" id="nav_item">
-                    <a class = "nav-link" href="">로그인 /</a>
-                  </li>
-                  <li class = "nav-item" id="nav_item">
-                    <a class = "nav-link" href="">회원가입</a>
-                  </li>
-                </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+<!-- 기본 템플릿 안에 삽입될 내용 Start -->
+<!-- 네비게이션 바 시작 부분 -->
+<div th:replace="~{/main/navBar :: headerFragment}"></div>
       <div class = "row" id = "topBox">
         <div class = "col" id = "analysis">
             <img src = "/img/boardPage_Img_1.png" width = 100px>
@@ -64,7 +24,7 @@
         </div>
       </div>
       <div id = "boardTitle">
-        <img src = "/img/boardPage_Img_2.png" width = 600px height="150px">
+        <img id="boardLogo" src="/img/boardPage_Img_2.png" width = 600px height="150px">
       </div>
       <div class =  "row justify-content-center">
         <div class="card col-4" id = "card">

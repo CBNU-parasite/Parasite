@@ -3,8 +3,8 @@
     left: 8px;
 }
 
-#boardTitle{
-   position: relative;
-   left: 30%;
-   padding-bottom: 5%;
+#boardLogo{
+    margin: auto;
+    display: block;
+    padding-bottom: 20px;
 }

@@ -33,21 +33,28 @@
   </ul>
   <ul th:if="${log == 'logIn'}">
     <div class = "row" id = "topBox">
-      <div class = "col-3">
-        <a class = "row" id="label">먹은 것을 등록하세요!</a>
+      <a class = "col" id="label">영양 상태는 건강하신가요?</a>
+      <div class ="row">
+        <img class = "col" id = "graph" src="/img/examGraph2.png">
+        <a class = "col" id ="label" >그래프를 통해 분석하세요.</a>
+      </div>
+      <div class = "row">
+        <a class = "col" id = "label">당신의 식단을 등록하세요.</a>
+        <img class = "col" id = "graph" src="/img/examGraph1.png">
+      </div>
+      <div class = "row" >
         <div class="card col" id = "card">
-          <img src="/img/sampleFoodBeer.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title" id="label">맥주!!!!</h5>
-            <p class="card-text" id="label">2023-11-28<br>author</p>
-            <btn class="btn btn-outline-danger"style="font-size:20px">♥</btn>
+          <div class="row">
+            <img src="/img/sampleFoodBeer.jpg"  class="col" style="width:200px;height:300px;margin:0px">
+            <div class="col" id="topBox" >
+              <a class = "col" id ="label" style="margin:auto;font-size:20px">맥주!!<br></a>
+              <a class = "col" id ="label" style="margin:auto;font-size:11px">2023-11-28<br></a>
+              <a class = "col" id ="label" style="margin:auto;font-size:11px">EmperorChan<br></a>
+              <btn class="btn btn-outline-danger"style="font-size:11px" onclick = "iLikeIt(this)">♡</btn>
+            </div>
           </div>
         </div>
-      </div>
-      <div class = "col">
-        <a class = "row" id="label">영양 상태는 건강하신가요?</a>
-        <img class = "row" id = "graph" src="/img/examGraph1.png">
-        <img class = "row" id = "grpah" src="/img/examGraph2.png">
+        <a class = "col" id="label">식단을 공유해볼까요?</a>
       </div>
     </div>
   </ul>

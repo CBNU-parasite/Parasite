@@ -12,8 +12,8 @@
     <div th:replace="~{/main/navBar :: headerFragment}"></div>
     <div class = "row" id ="searchBox">
         <div>
-            <form action ="" method = "POST">
-                <input id = "searchInput" type="text" placeholder="음식을 검색해 주세요">
+            <form th:action="'/analyze/analyzeSearch'" th:method="post">
+                <input id = "searchInput" type="text" name="query" placeholder="음식을 검색해 주세요">
                 <button class = "btn btn-secondary" style="margin-bottom:14px;"
                 type="submit">
                     <img src = "/img/glass.png" id ="searchBtnImg">
@@ -22,6 +22,14 @@
             </form>
         </div>
     </div>
+    <!-- 검색 결과 띄우기   -->
+    <div th:if="${foodInfo}">
+      <h2>Search Results:</h2>
+      <ul >
+        <li th:each="food : ${foodInfo}" th:text="${food.foodName}"></li>
+      </ul>
+    </div>
+
     <div class = "row" style="max-width:98%">
         <div class = "col-2" id = "menuBar">
             <div class = "row">

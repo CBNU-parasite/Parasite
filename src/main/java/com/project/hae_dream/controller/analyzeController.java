@@ -1,13 +1,11 @@
 package com.project.hae_dream.controller;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import com.project.hae_dream.dto.FoodRequest;
+import com.project.hae_dream.dto.request.FoodRequest;
 import com.project.hae_dream.util.FoodApi;
 import com.project.hae_dream.util.FoodInfo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,8 +41,8 @@ public class analyzeController {
         return "/analyze/analyzeSearch";
     }
 
-    @PostMapping("/analyze/selectFood")
     @ResponseBody
+    @PostMapping("/analyze/selectFood")
     public String handleButtonClick(@ModelAttribute FoodRequest foodRequest) {
         // 클라이언트로부터 받은 데이터를 처리합니다.
         String foodName = foodRequest.getFoodName();

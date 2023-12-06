@@ -1,4 +1,4 @@
-package com.project.hae_dream.dto;
+package com.project.hae_dream.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;

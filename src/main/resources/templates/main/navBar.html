@@ -51,7 +51,7 @@
               </ul>
               <ul th:if="${log != 'logIn'}" class="navbar-nav">
                 <li th:if="${userName}" class = "nav-item">
-                  <a th:utext="${userName} + '님&nbsp;&nbsp;/'" class = "nav-link" id="nav_item" href="/user/login">000님 /</a>
+                  <a th:utext="${userName} + '님&nbsp;&nbsp;/'" class = "nav-link" id="nav_item" href="/account/myPage"></a>
                 </li>
                 <li class = "nav-item">
                   <a class = "nav-link" id="nav_item" href="/user/logout">로그아웃</a>

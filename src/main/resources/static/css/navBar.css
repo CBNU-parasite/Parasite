@@ -6,6 +6,7 @@
 }
 body{
     margin: 0;
+    min-width:992px;
 }
 #nav_item{
     min-width: 100px;

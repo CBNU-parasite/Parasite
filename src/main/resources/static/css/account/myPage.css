@@ -68,7 +68,6 @@ body{
 }
 
 #pieChartBox{
-    position:absolute;
     justify-content:space-around;
     margin-left:40px;
     margin-top:10px;
@@ -86,4 +85,15 @@ body{
     background-color:white;
     height:300px;
     width:30%;
+}
+
+#detailedBox{
+    background-color:white;
+    margin:5%;
+    border-radius:20px;
+    padding:20px;
+    height:300px;
+}
+#detailed{
+    margin-left:15%;
 }

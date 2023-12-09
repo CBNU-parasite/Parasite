@@ -43,6 +43,7 @@ new Chart(stickGraph, {
         y: {
           beginAtZero: true
         }
-      }
+      },
+      hoverBackgroundColor:'rgba(255,255,255)'
     }
   });

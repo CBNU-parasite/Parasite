@@ -25,6 +25,8 @@ body {
 }
 
 .box1-image1 {
+  border-style: solid;
+  border-color: black;
   width: 520px;
   height: 500px;
   border-radius: 20px;
@@ -38,6 +40,8 @@ body {
 }
 
 .box2 {
+  border-style: solid;
+  border-color: black;
   position: relative;
   width: 520px;
   height: 500px;
@@ -46,6 +50,7 @@ body {
 }
 
 .box2 h1 {
+  padding-top: 45px;
   font-family:SOYOMapleBoldTTF;
   text-align: center;
   font-size: 40px;
@@ -56,7 +61,7 @@ form {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 35px;
   gap: 20px;
   height: 250px;
 }
@@ -108,4 +113,9 @@ form > div > img {
 
 .box6:hover{
   color: blue;
+}
+
+#label{
+  font-family:SOYOMapleBoldTTF;
+  font-size: 30px;
 }

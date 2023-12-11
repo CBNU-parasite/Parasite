@@ -25,6 +25,8 @@ body {
   }
   
   .box1-image1 {
+    border-style: solid;
+    border-color: black;
     width: 520px;
     height: 500px;
     border-radius: 20px;
@@ -38,7 +40,7 @@ body {
   }
   
   .box2 {
-    border-style:dashed;
+    border-style:solid;
     position: relative;
     width: 520px;
     height: 500px;

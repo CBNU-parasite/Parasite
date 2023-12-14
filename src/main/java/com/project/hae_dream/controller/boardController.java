@@ -15,4 +15,7 @@ public class boardController {
     public String createArticle() {
         return "/board/boardPageafter";
     }
+
+    @GetMapping("/board/test")
+    public String test(){return "/board/boardPagebeforeSecond";}
 }

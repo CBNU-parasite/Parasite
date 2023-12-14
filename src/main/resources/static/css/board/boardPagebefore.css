@@ -1,55 +1,61 @@
 body {
-    background: linear-gradient(90deg, rgba(85, 237, 82, 0.35) 0%, rgba(255,255,255,1) 80%);
+    margin:0;
+    align-items:center;
+    text-align:center;
 }
 
-#topBox{
-    position: absolute;
-    left: 90%;
+#footerBox{
+    bottom:0%;
+    position:fixed;
+    margin:5px;
+    right:0%;
+    align-items:center;
+    width:120px;
 }
 
-#PostIt {
-    position: relative;
-    left: 5%;
+#createPost {
     font-family:SOYOMapleBoldTTF;
     text-decoration-line : none;
+    color:black;
+    margin-right:10%;
 }
 
 #title {
-    margin: auto;
+    margin:5%;
     display: block;
-    padding-bottom: 20px;
     font-family:SOYOMapleBoldTTF;
     text-align: center;
-    font-size: 80px;
+    font-size: 55px;
     text-decoration: none;
     position: relative;
     top: 16px;
-    margin-bottom: 15%;
 }
 
-#card-left{
+#card{
+    margin:10px;
     border-style: solid;
     border-color: black;
-    border-top-width: thin;
     border-bottom-width: thick;
-    border-left-width: 20px;
-    border-right-width: 2px;
-    border-radius: 2px;
+    border-right-width: thick;
+    border-radius: 10px;
     font-family:SOYOMapleBoldTTF;
-    margin-right: 10%;
-    margin-bottom: 10%;
 }
 
-#card-right{
-    border-style: solid;
-    border-color: black;
-    border-top-width: thin;
-    border-bottom-width: thick;
-    border-left-width: 20px;
-    border-right-width: 2px;
-    border-radius: 2px;
-    font-family:SOYOMapleBoldTTF;
-    margin-bottom: 10%;
+#imgBox{
+    width:100%;
+    height : 540px;
+    line-width:100%;
+    line-height:540px;
+    text-align:center;
+    align-self:center;
+    border-bottom:solid;
+    justify-content:center;
+}
+
+#img{
+    vertical-align:middle;
+    max-width:340px;
+    max-height:540px;
 }
 
 .pagination-container {
@@ -80,4 +86,8 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+#likeCnt{
+    font-size:15px;
 }

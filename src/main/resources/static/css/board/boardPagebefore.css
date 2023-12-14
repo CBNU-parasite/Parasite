@@ -1,20 +1,5 @@
-#PostIt{
-    position: relative;
-    left: 5%;
-    font-family:SOYOMapleBoldTTF;
-}
-
-#title{
-    margin: auto;
-    display: block;
-    padding-top: 20px;
-    font-family:SOYOMapleBoldTTF;
-    text-align: center;
-    font-size: 80px;
-    text-decoration: none;
-    position: relative;
-    top: 16px;
-    margin-bottom: 20%;
+body {
+    background: linear-gradient(90deg, rgba(85, 237, 82, 0.35) 0%, rgba(255,255,255,1) 80%);
 }
 
 #topBox{
@@ -22,8 +7,24 @@
     left: 90%;
 }
 
-body {
-    background: linear-gradient(90deg, rgba(85, 237, 82, 0.35) 0%, rgba(255,255,255,1) 80%);
+#PostIt {
+    position: relative;
+    left: 5%;
+    font-family:SOYOMapleBoldTTF;
+    text-decoration-line : none;
+}
+
+#title {
+    margin: auto;
+    display: block;
+    padding-bottom: 20px;
+    font-family:SOYOMapleBoldTTF;
+    text-align: center;
+    font-size: 80px;
+    text-decoration: none;
+    position: relative;
+    top: 16px;
+    margin-bottom: 20%;
 }
 
 #card-left{
@@ -50,13 +51,14 @@ body {
     font-family:SOYOMapleBoldTTF;
     margin-bottom: 10%;
 }
+
 .pagination-container {
     display: flex;
     align-items: center;
     bottom: 0;
     justify-content: center;
 }
-.pagination-numbers,
+.pagination-number,
 .pagination-button {
     font-size: 1.1rem;
     background-color: transparent;
@@ -67,13 +69,13 @@ body {
     width: 2.5rem;
     border-radius: 0.2rem;
 }
-.pagination-numbers:hover,
+.pagination-number:hover,
 .pagination-button:not(.disabled):hover {
-    background-color: #fff;
-}
-.pagination-numbers.active {
-    color: #fff;
     background: #fff;
+}
+.pagination-number.active {
+    color: #fff;
+    background: #0085b6;
 }
 
 .hidden {

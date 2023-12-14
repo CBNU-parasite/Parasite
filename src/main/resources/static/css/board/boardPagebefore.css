@@ -75,7 +75,7 @@ body {
 }
 .pagination-number.active {
     color: #fff;
-    background: #0085b6;
+    background: limegreen;
 }
 
 .hidden {

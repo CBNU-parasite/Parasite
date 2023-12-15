@@ -66,17 +66,16 @@
             <div class = "row" >
                 <a class = "col" id="labelHead"><오늘 먹은 음식></a>
             </div>
-            <div class = "row">
-                <a class = "col" id="label">군만두</a>
-                <button class="btn btn-secondary col" id="todayEat">삭제</button>
+            <div th:if="${userFoods}">
+              <div th:each="userFood : ${userFoods}">
+                <div class = "row">
+                    <a class = "col" id="label" th:text="${userFood.getFoodName()}">군만두</a>
+                    <button class="btn btn-secondary col select-btn" id="todayEat"  th:data-food-name1-th="${userFood.getFoodName()}">삭제</button>
+                </div>
+              </div>
             </div>
-            <div class = "row">
-                <a class = "col" id="label">군만두</a>
-                <button class="btn btn-secondary col" id="todayEat">삭제</button>
-            </div>
-            <div class = "row">
-                <a class = "col" id="label">군만두</a>
-                <button class="btn btn-secondary col" id="todayEat">삭제</button>
+            <div th:unless="${userFoods}">
+              <p>먹은거 없음</p>
             </div>
         </div>
     </div>
@@ -116,6 +115,60 @@
           });
         });
       });
+
+      $(document).ready(function () {
+        // 버튼 클릭 이벤트 처리
+        $('.select-btn').on('click', function () {
+          // 클릭된 버튼의 data- 속성을 통해 정보를 가져온다.
+          var foodName = $(this).data('food-name1-th');
+          var data = 'what'
+
+          // TODO: 나중에 지울 것, 테스트용 로그
+          console.log(foodName);
+
+          $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8081/analyze/deleteFood',
+            data: {
+              foodName: foodName
+            },
+            success: function (response) {
+              console.log('Data sent successfully:', response);
+              // 새로고침 되는게 너무 어색해서 0.2초 시간지연
+              setTimeout(() => window.location.replace(location.href), 200);
+            },
+            error: function (error) {
+              console.error('Error sending data:', error);
+            }
+          });
+        });
+      });
+
+      // $(document).ready(function () {
+      //   // 버튼 클릭 이벤트 처리
+      //   $('.select-butt').on('click', function () {
+      //     // 클릭된 버튼의 data- 속성을 통해 정보를 가져온다.
+      //     var foodName = $(this).data('food-name1-th');
+      //
+      //     // TODO: 나중에 지울 것, 테스트용 로그
+      //     console.log(foodName);
+      //
+      //     $.ajax({
+      //       type: 'POST',
+      //       url: 'http://localhost:8081/analyze/deleteFood',
+      //       data: {
+      //         foodName: foodName
+      //       },
+      //       success: function (response) {
+      //         console.log('Data sent successfully:', response);
+      //         setTimeout(() => window.location.replace(location.href), 200);
+      //       },
+      //       error: function (error) {
+      //         console.error('Error sending data:', error);
+      //       }
+      //     });
+      //   });
+      // });
 
     </script>
 </body>

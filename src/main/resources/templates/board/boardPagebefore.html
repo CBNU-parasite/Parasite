@@ -16,114 +16,65 @@
 </head>
 
 <body>
-<div th:replace="~{/main/navBar :: headerFragment}"></div>
+    <div th:replace="~{/main/navBar :: headerFragment}"></div>
 
-<div class = "row" id="boardTitle">
-    <a class = "col text-dark" id = "title"> 게시판 </a>
-</div>
-<ul id="paginated-list" aria-live="polite">
-    <li class="row justify-content-center">
-        <div class="card col-4" id="card">
-            <div id="imgBox">
-                <img src="/img/sampleFoodBeer.jpg" class="card-img-top"id="img">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">맥주!!!!</h5>
-                <p class="card-text">2023-11-28<br />author</p>
-                <div>
-                    <a id="likeCnt">0</a>
-                    <btn
-                            class="btn btn-outline-danger col"
-                            style="font-size: 20px"
-                            onclick="iLikeIt(this)"
-                    >♡</btn>
+    <div class = "row" id="boardTitle">
+        <a class = "col text-dark" id = "title"> 게시판 </a>
+    </div>
+    <ul id="paginated-list" aria-live="polite">
+        <li class="row justify-content-center">
+            <div class="card col-4" id="card" th:each="board: ${boardList}">
+                <tr th:if="${board.fileAttached == 1}">
+                    <div id="imgBox">
+                        <img src="@{|/upload/${board.storedFileName}|}" class="card-img-top"id="img">
+                    </div>
+                </tr>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${board.boardTitle}"></h5>
+                    <p class="card-text" th:text="${board.boardCreatedTime}$"></p>
+                    <br>
+                    <p class="card-text" th:text="${board.boardWriter}"></p>
+                    <div>
+                        <a id="likeCnt" th:text="${board.boardLikeCnt}"></a>
+                        <btn
+                                class="btn btn-outline-danger col"
+                                style="font-size: 20px"
+                                onclick="iLikeIt(this)"
+                        >♡</btn>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card col-4" id="card">
-            <div id="imgBox">
-                <img src="/img/sampleFoodForkChap.jpg" class="card-img-top"id="img">
+        </li>
+    </ul>
+    <div id="footerBox">
+        <a href = "/board/create">
+            <img class = "" src="/img/boardPage_Img_1.png" width="100px" href="/board/create">
+            <div class = "">
+                <a id="createPost" href = "/board/create">게시물 올리기</a>
             </div>
-            <div class="card-body">
-                <h5 class="card-title">등갈비</h5>
-                <p class="card-text">2023-11-29<br />author</p>
-                <div >
-                    <a id="likeCnt">0</a>
-                    <btn
-                            class="btn btn-outline-danger col"
-                            style="font-size: 20px"
-                            onclick="iLikeIt(this)"
-                    >♡</btn>
-                </div>
-            </div>
-        </div>
-    </li>
-    <li class="row justify-content-center">
-        <div class="card col-4" id="card">
-            <div id = "imgBox">
-                <img src="/img/sampleFoodFrog.jpg" class="card-img-top" id="img">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">개구리 뒷다리~</h5>
-                <p class="card-text">2023-11-28<br />author</p>
-                <div >
-                    <a id="likeCnt">0</a>
-                    <btn
-                            class="btn btn-outline-danger col"
-                            style="font-size: 20px"
-                            onclick="iLikeIt(this)"
-                    >♡</btn>
-                </div>
-            </div>
-        </div>
-        <div class="card col-4" id="card">
-            <div id="imgBox">
-                <img src="/img/sampleFoodCutlet.jpg" class="card-img-top"id="img">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title col">돈까스</h5>
-                <p class="card-text col">2023-11-29 <br>author</p>
-                <div >
-                    <a id="likeCnt">0</a>
-                    <btn
-                            class="btn btn-outline-danger col"
-                            style="font-size: 20px"
-                            onclick="iLikeIt(this)"
-                    >♡</btn>
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-<div id="footerBox">
-    <a href = "/board/create">
-        <img class = "" src="/img/boardPage_Img_1.png" width="100px" href="/board/create">
-        <div class = "">
-            <a id="createPost" href = "/board/create">게시물 올리기</a>
-        </div>
-    </a>
-</div>
-<nav class="pagination-container">
-    <button
-            class="pagination-button"
-            id="prev-button"
-            title="Previous page"
-            aria-label="Previous page">
-        &lt;
-    </button>
+        </a>
+    </div>
+    <nav class="pagination-container">
+        <button
+                class="pagination-button"
+                id="prev-button"
+                title="Previous page"
+                aria-label="Previous page">
+            &lt;
+        </button>
 
-    <div id="pagination-numbers"></div>
+        <div id="pagination-numbers"></div>
 
-    <button
-            class="pagination-button"
-            id="next-button"
-            title="Next page"
-            aria-label="Next page"
-    >
-        &gt;
-    </button>
-</nav>
-<script src="/js/account/likeIt.js"></script>
-<script src="/js/board/pagination.js"></script>
+        <button
+                class="pagination-button"
+                id="next-button"
+                title="Next page"
+                aria-label="Next page"
+        >
+            &gt;
+        </button>
+    </nav>
+    <script src="/js/account/likeIt.js"></script>
+    <script src="/js/board/pagination.js"></script>
 </body>
 </html>

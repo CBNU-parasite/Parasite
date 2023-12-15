@@ -20,8 +20,8 @@
 <div class="container">
   <div class="box1">
     <h1>게시물 등록</h1>
-    <form action="/user/board" method="post">
-      <form>
+    <form action="/board/save" method="post" enctype="multipart/form-data">
+
         <div class="box2">
           <div class="title">
             <div class="form-label">- 제목을 입력해주세요</div>
@@ -40,7 +40,6 @@
             <input class="set-title basic-form" type="text" name="boardPass" />
           </div>
         </div>
-      </form>
       <div>
         <button class = "btn btn-success" type="submit" id="label">게시물 업로드</button>
       </div>

@@ -25,17 +25,15 @@
         <li class="row justify-content-center">
             <div class="card col-4" id="card" th:each="board: ${boardList}">
                 <tr th:if="${board.fileAttached == 1}">
-                    <div id="imgBox">
-                        <img src="@{|/upload/${board.storedFileName}|}" class="card-img-top"id="img">
-                    </div>
+                    <div id="imgBox"><img th:src="@{|/upload/${board.storedFileName}|}" alt="" class="card-img-top" ></div>
                 </tr>
                 <div class="card-body">
                     <h5 class="card-title" th:text="${board.boardTitle}"></h5>
-                    <p class="card-text" th:text="${board.boardCreatedTime}$"></p>
+                    <p class="card-text" th:text="${board.boardCreatedTime}"></p>
                     <br>
                     <p class="card-text" th:text="${board.boardWriter}"></p>
                     <div>
-                        <a id="likeCnt" th:text="${board.boardLikeCnt}"></a>
+                        <a id="likeCnt"></a>
                         <btn
                                 class="btn btn-outline-danger col"
                                 style="font-size: 20px"
@@ -50,7 +48,7 @@
         <a href = "/board/create">
             <img class = "" src="/img/boardPage_Img_1.png" width="100px" href="/board/create">
             <div class = "">
-                <a id="createPost" href = "/board/create">게시물 올리기</a>
+                <a id="createPost" href = "/board/save">게시물 올리기</a>
             </div>
         </a>
     </div>

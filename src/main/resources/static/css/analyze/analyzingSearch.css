@@ -33,14 +33,14 @@ body{
     padding-left:30px;
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
-    border-style:solid;
+    border-style:groove;
 }
 #selectedItemBox{
     margin:10px;
     margin-right:50px;
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
-    border-style:solid;
+    border-style:groove;
 }
 #label{
     font-family:SOYOMapleBoldTTF;
@@ -82,7 +82,7 @@ body{
     margin-left:50px;
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
-    border-style:solid;
+    border-style:groove;
     max-height:110px;
 }
 #graphBox{
@@ -91,5 +91,5 @@ body{
     margin-right:50px;
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
-    border-style:solid;
+    border-style:groove;
 }

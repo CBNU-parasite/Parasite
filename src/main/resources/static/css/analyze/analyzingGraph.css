@@ -13,7 +13,7 @@ body{
     margin-left:50px;
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
-    border-style:solid;
+    border-style:groove;
     max-height:110px;
 }
 #label{
@@ -35,7 +35,7 @@ body{
     margin:10px;
     background-color: rgba(85, 237, 82, 0.35);
     border-radius:20px;
-    border-style:solid;
+    border-style:groove;
     padding:50px;
 }
 #labelGraph{

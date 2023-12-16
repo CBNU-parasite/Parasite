@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -29,21 +32,40 @@ public class BoardController {
 //    }
 
     @GetMapping("/save")
-    public String createArticle() {
+    public String createArticle(Model model, HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+
+        if (session == null || session.getAttribute("loginId") == null) {
+            return "redirect:/user/login";
+        }
+        else {
+            model.addAttribute("userName", session.getAttribute("userName"));
+            model.addAttribute("log", "logOut");
+        }
         return "/board/boardPageafter";
     }
     @PostMapping("/save")
-    public String create(@ModelAttribute BoardDTO boardDTO) throws IOException {
+    public String create(@ModelAttribute BoardDTO boardDTO, Model model, HttpServletRequest request) throws IOException {
+        HttpSession session = request.getSession(false);
         System.out.println("boardDTO = "+boardDTO);
+        boardDTO.setBoardWriter(session.getAttribute("userName").toString());
         boardService.save(boardDTO);
-        return "redirect:/board/index";
+        return "redirect:/board/view";
     }
 
     @GetMapping("/view")
-    public String findAll(Model model){
+    public String findAll(Model model, HttpServletRequest request){
         List<BoardDTO> boardDTOList = boardService.findAll();
         model.addAttribute("boardList",boardDTOList);
+        HttpSession session = request.getSession(false);
 
+        if (session == null || session.getAttribute("loginId") == null) {
+            model.addAttribute("log", "logIn");
+        }
+        else {
+            model.addAttribute("userName", session.getAttribute("userName"));
+            model.addAttribute("log", "logOut");
+        }
         return "/board/boardPagebefore";
     }
 

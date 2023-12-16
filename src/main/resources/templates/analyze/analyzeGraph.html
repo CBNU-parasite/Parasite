@@ -25,24 +25,19 @@
         <div class = "col">
             <div id = "contents">
                 <div class = "row" id = "graphBox">
-                    <div class = "col">
+                    <div class = "col" >
                         <a class = "col" id = "labelGraph"><오늘 내가 섭취한 음식들></a>
-                        <div class = "row">
-                            <a class = "col" id="label">군만두</a>
-                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                      <div th:if="${userFoods}">
+                        <div th:each="userFood : ${userFoods}">
+                          <div class = "row">
+                              <a class = "col" id="label" th:text="${userFood.getFoodName()}"}>군만두</a>
+                              <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                          </div>
                         </div>
-                        <div class = "row">
-                            <a class = "col" id="label">군만두</a>
-                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
-                        </div>
-                        <div class = "row">
-                            <a class = "col" id="label">군만두</a>
-                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
-                        </div>
-                        <div class = "row">
-                            <a class = "col" id="label">군만두</a>
-                            <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
-                        </div>
+                      </div>
+                      <div th:unless="${userFoods}">
+                        <p>먹은거 없음</p>
+                      </div>
                     </div>
                     <canvas class = "col" id = "tdgGraph"></canvas>
                 </div>

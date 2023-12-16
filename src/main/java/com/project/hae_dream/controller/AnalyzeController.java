@@ -133,8 +133,22 @@ public class AnalyzeController {
     }
 
     @GetMapping("/analyze/analyzeGraph")
-    public String analyzeGraph() {
-        return "analyze/analyzeGraph";
+    public String analyzeGraph(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+
+        if (session == null || session.getAttribute("loginId") == null) {
+
+            return "redirect:/user/login";
+        } else {
+            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+            if (searchContent != null) {
+                model.addAttribute("userFoods", searchContent);
+            }
+
+            model.addAttribute("userName", session.getAttribute("userName"));
+            model.addAttribute("log", "logOut");
+            return "analyze/analyzeGraph";
+        }
     }
 
 }

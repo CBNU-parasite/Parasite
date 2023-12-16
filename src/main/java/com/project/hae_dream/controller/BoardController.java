@@ -36,7 +36,7 @@ public class BoardController {
     public String create(@ModelAttribute BoardDTO boardDTO) throws IOException {
         System.out.println("boardDTO = "+boardDTO);
         boardService.save(boardDTO);
-        return "/main/mainPage";
+        return "redirect:/board/index";
     }
 
     @GetMapping("/view")

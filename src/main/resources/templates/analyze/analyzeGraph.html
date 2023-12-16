@@ -30,13 +30,12 @@
                       <div th:if="${userFoods}">
                         <div th:each="userFood : ${userFoods}">
                           <div class = "row">
-                              <a class = "col" id="label" th:text="${userFood.getFoodName()}"}>군만두</a>
-                              <button class="btn btn-secondary col-2" id="todayEat">삭제</button>
+                              <a class = "col" id="label" th:text="${userFood.getFoodName()}"}></a>
                           </div>
                         </div>
                       </div>
                       <div th:unless="${userFoods}">
-                        <p>먹은거 없음</p>
+                        <p id = "label">오늘 먹은 것을 저장해 주세요.</p>
                       </div>
                     </div>
                     <canvas class = "col" id = "tdgGraph"></canvas>
@@ -45,9 +44,80 @@
                     <a class = "col" id = "labelGraph" >성분 그래프</a>
                     <canvas class = "row" id = "detailed"></canvas>
                 </div>
-
                 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-                <script src="/js/analyze/graph.js"></script>
+                <script th:inline="javascript">
+                    /*<![CDATA[*/
+                    const pieChart = document.getElementById('tdgGraph');
+                    const stickGraph = document.getElementById('detailed');
+                    var carb = 0, fat=0, prot=0;
+                    var cal=0,sug=0,salt=0,chole=0,fata=0,trans=0;
+                    var userfood = /*[[${userFoods}]]*/[];
+                    for(var i=0; i<userfood.length;i++){
+                        carb += userfood[i].carbohydrate;
+                        fat += userfood[i].fat;
+                        prot += userfood[i].protein;
+                        cal += userfood[i].kcal;
+                        sug += userfood[i].sugars;
+                        salt += userfood[i].sodium;
+                        chole += userfood[i].cholesterol;
+                        fata += userfood[i].saturatedFat;
+                        trans = userfood[i].transfat;
+                    }
+                    cal=cal/26;
+                    salt=salt/30;
+                    chole=chole/3;
+                    sug = sug/37.5*100;
+                    //여자는 25g
+                    fata = fata/15*100;
+                    trans = trans/2.2*100;
+
+                    new Chart(pieChart,{
+                            type: 'pie',
+                            weight:1100,
+                            hoverBorderJoinStyle : 'round',
+                            data:{
+                                labels:['탄수화물(g)','단백질(g)','지방(g)'],
+                                datasets:[{data: [carb,prot,fat],
+                                    backgroundColor: [
+                                        'rgb(255, 99, 132)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(255, 205, 86)'
+                                    ],
+                                    hoverOffset: 4
+                                }]
+                            }
+                        }
+                    )
+
+                    new Chart(stickGraph, {
+                        type: 'bar',
+                        data: {
+                            labels: ['열량', '당류', '나트륨', '콜레스테롤', '포화지방산', '트랜스지방'],
+                            datasets: [{
+                                label:"적정/권장 섭취량(%)",
+                                data: [cal, sug, salt, chole, fata, trans],
+                                borderWidth: 1,
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)',
+                                    'rgba(255, 205, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(201, 203, 207, 0.2)'
+                                ]
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                    /*]]>*/
+                </script>
             </div>
         </div>
     </div>

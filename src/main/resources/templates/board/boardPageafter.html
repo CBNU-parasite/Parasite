@@ -10,41 +10,40 @@
           rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
           crossorigin="anonymous"
-  />
-
+  >
   <title>게시판</title>
 </head>
 
 <body>
 <div th:replace="~{/main/navBar :: headerFragment}"></div>
 <div class="container">
-  <div class="box1">
-    <h1>게시물 등록</h1>
-    <form action="/board/save" method="post" enctype="multipart/form-data">
-
-        <div class="box2">
-          <div class="title">
-            <div class="form-label">- 제목을 입력해주세요</div>
-            <input type="text" class="set-title basic-form" name="boardTitle"/>
-          </div>
-          <div class="title">
-            <div class="form-label">- 이름을 입력해주세요</div>
-            <input type="text" class="set-title basic-form" name="boardWriter" />
-          </div>
-          <div class="picture">
-            <label class="form-label">- 사진을 올려주세요</label>
-            <input class="form-control" type="file" name="boardFile" />
-          </div>
-          <div class="password">
-            <div class="form-label">- 비밀번호를 입력해주세요</div>
-            <input class="set-title basic-form" type="text" name="boardPass" />
-          </div>
+  <h1 id = "title">게시물 등록</h1>
+  <form action="/board/save" method="post" enctype="multipart/form-data">
+    <div >
+        <div class="row">
+          <div class="row" id = "labelTitle">제목을 입력해주세요</div>
+          <input type="text" class="set-title basic-form" name="boardTitle" id = "label">
         </div>
-      <div>
-        <button class = "btn btn-success" type="submit" id="label">게시물 업로드</button>
+        <div class="row">
+          <div class="form-label" id = "labelTitle">작성자</div>
+          <input type="text"
+                 class="set-title basic-form"
+                 name="boardWriter"
+                 id = "label"
+                 disabled="disabled"
+                 style="background-color:lightgray;"
+                 placeholder="홍길동"
+          >
+        </div>
+        <div class="row">
+          <label class="form-label" id = "labelTitle">사진을 올려주세요</label>
+          <input class="form-control" type="file" name="boardFile" id = "label"/>
+        </div>
       </div>
-    </form>
-  </div>
+    <div>
+      <button class = "btn btn-success" type="submit" id="label">게시물 업로드</button>
+    </div>
+  </form>
 </div>
 </body>
 </html>

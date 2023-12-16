@@ -46,6 +46,11 @@ public class FoodApi {
             foodInfo.setNUTR_CONT2(foodNode.get("NUTR_CONT2").asDouble());
             foodInfo.setNUTR_CONT3(foodNode.get("NUTR_CONT3").asDouble());
             foodInfo.setNUTR_CONT4(foodNode.get("NUTR_CONT4").asDouble());
+            foodInfo.setNUTR_CONT5(foodNode.get("NUTR_CONT5").asDouble());
+            foodInfo.setNUTR_CONT6(foodNode.get("NUTR_CONT6").asDouble());
+            foodInfo.setNUTR_CONT7(foodNode.get("NUTR_CONT7").asDouble());
+            foodInfo.setNUTR_CONT8(foodNode.get("NUTR_CONT8").asDouble());
+            foodInfo.setNUTR_CONT9(foodNode.get("NUTR_CONT9").asDouble());
 
             results.add(foodInfo);
         }

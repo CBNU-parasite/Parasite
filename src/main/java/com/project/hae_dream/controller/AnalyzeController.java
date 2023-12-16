@@ -90,6 +90,11 @@ public class AnalyzeController {
         String nutrCont2 = foodRequest.getNutrCont2();
         String nutrCont3 = foodRequest.getNutrCont3();
         String nutrCont4 = foodRequest.getNutrCont4();
+        String nutrCont5 = foodRequest.getNutrCont5();
+        String nutrCont6 = foodRequest.getNutrCont6();
+        String nutrCont7 = foodRequest.getNutrCont7();
+        String nutrCont8 = foodRequest.getNutrCont8();
+        String nutrCont9 = foodRequest.getNutrCont9();
 
         HttpSession session = request.getSession(false);
 
@@ -101,6 +106,11 @@ public class AnalyzeController {
         analyzeEntity.setCarbohydrate(Double.parseDouble(nutrCont2));
         analyzeEntity.setProtein(Double.parseDouble(nutrCont3));
         analyzeEntity.setFat(Double.parseDouble(nutrCont4));
+        analyzeEntity.setSugars(Double.parseDouble(nutrCont5));
+        analyzeEntity.setSodium(Double.parseDouble(nutrCont6));
+        analyzeEntity.setCholesterol(Double.parseDouble(nutrCont7));
+        analyzeEntity.setSaturatedFat(Double.parseDouble(nutrCont8));
+        analyzeEntity.setTransFat(Double.parseDouble(nutrCont9));
         analyzeEntity.setCreatedAt(LocalDateTime.now());
 
         // 실제 로직을 수행하고 응답을 생성합니다.

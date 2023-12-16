@@ -15,4 +15,14 @@ public class FoodInfo {
     private double NUTR_CONT3;
     // 지방
     private double NUTR_CONT4;
+    // 당류
+    private double NUTR_CONT5;
+    // 나트륨
+    private double NUTR_CONT6;
+    // 콜레스테롤
+    private double NUTR_CONT7;
+    // 포화지방
+    private double NUTR_CONT8;
+    // 트랜스지방
+    private double NUTR_CONT9;
 }

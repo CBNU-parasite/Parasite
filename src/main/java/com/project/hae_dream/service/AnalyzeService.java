@@ -37,8 +37,8 @@ public class AnalyzeService {
     }
 
     public void saveFood(AnalyzeDTO dto){
-        AnalyzeEntity boardEntity = AnalyzeEntity.toAnalyzeEntity(dto);
-        analyzeRepository.save(boardEntity);
+        AnalyzeEntity analyzeEntity = AnalyzeEntity.toAnalyzeEntity(dto);
+        analyzeRepository.save(analyzeEntity);
     }
 
 }

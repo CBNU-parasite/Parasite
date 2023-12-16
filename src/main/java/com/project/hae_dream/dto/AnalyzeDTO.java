@@ -4,6 +4,7 @@ import com.project.hae_dream.entity.AnalyzeEntity;
 import com.project.hae_dream.entity.UserAccountEntity;
 import lombok.*;
 
+import javax.persistence.Column;
 import java.time.LocalDateTime;
 
 @Getter
@@ -18,6 +19,11 @@ public class AnalyzeDTO {
     private Double carbohydrate;
     private Double protein;
     private Double fat;
+    private Double sugars;
+    private Double sodium;
+    private Double cholesterol;
+    private Double saturatedFat;
+    private Double transFat;
     private LocalDateTime createdAt;
 
     public static AnalyzeDTO toAnalyzeDTO(AnalyzeEntity analyzeEntity){
@@ -30,6 +36,11 @@ public class AnalyzeDTO {
         analyzeDTO.setCarbohydrate(analyzeEntity.getCarbohydrate());
         analyzeDTO.setProtein(analyzeEntity.getProtein());
         analyzeDTO.setFat(analyzeEntity.getFat());
+        analyzeDTO.setSugars(analyzeEntity.getSugars());
+        analyzeDTO.setSodium(analyzeEntity.getSodium());
+        analyzeDTO.setCholesterol(analyzeEntity.getCholesterol());
+        analyzeDTO.setSaturatedFat(analyzeEntity.getSaturatedFat());
+        analyzeDTO.setTransFat(analyzeEntity.getTransFat());
         analyzeDTO.setCreatedAt(analyzeEntity.getCreatedAt());
 
         return analyzeDTO;

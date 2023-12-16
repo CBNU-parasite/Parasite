@@ -31,6 +31,16 @@ public class AnalyzeEntity {
 
     @Column private Double fat;
 
+    @Column private Double sugars;
+
+    @Column private Double sodium;
+
+    @Column private Double cholesterol;
+
+    @Column private Double saturatedFat;
+
+    @Column private Double transFat;
+
     @Column private LocalDateTime createdAt;
 
     public AnalyzeEntity() {
@@ -47,6 +57,11 @@ public class AnalyzeEntity {
         analyzeEntity.setCarbohydrate(analyzeDTO.getCarbohydrate());
         analyzeEntity.setProtein(analyzeDTO.getProtein());
         analyzeEntity.setFat(analyzeDTO.getFat());
+        analyzeEntity.setSugars(analyzeDTO.getSugars());
+        analyzeEntity.setSodium(analyzeDTO.getSodium());
+        analyzeEntity.setCholesterol(analyzeDTO.getCholesterol());
+        analyzeEntity.setSaturatedFat(analyzeDTO.getSaturatedFat());
+        analyzeEntity.setTransFat(analyzeDTO.getTransFat());
         analyzeEntity.setCreatedAt(analyzeDTO.getCreatedAt());
 
         return analyzeEntity;

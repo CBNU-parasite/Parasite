@@ -48,7 +48,7 @@
                     <!-- each 돌린 후 음식 이름 : food.foodName, 열량 : food.NUTR_CONT1, 탄수화물 : food.NUTR_CONT2, 단백질 : food.NUTR_CONT3, 지방 : food.NUTR_CONT4       -->
                     <div th:each="food : ${foodInfo}" class = "row">
                         <!-- th:data-... 지우지 말것 -->
-                        <button class="btn btn-light col-1 select-button" id="foodItem" th:data-food-name-th="${food.foodName}" th:data-nutr-cont1-th="${food.NUTR_CONT1}" th:data-nutr-cont2-th="${food.NUTR_CONT2}" th:data-nutr-cont3-th="${food.NUTR_CONT3}" th:data-nutr-cont4-th="${food.NUTR_CONT4}" style="font-size:18px">추가</button>
+                        <button class="btn btn-light col-1 select-button" id="foodItem" th:data-food-name-th="${food.foodName}" th:data-nutr-cont1-th="${food.NUTR_CONT1}" th:data-nutr-cont2-th="${food.NUTR_CONT2}" th:data-nutr-cont3-th="${food.NUTR_CONT3}" th:data-nutr-cont4-th="${food.NUTR_CONT4}" th:data-nutr-cont5-th="${food.NUTR_CONT5}" th:data-nutr-cont6-th="${food.NUTR_CONT6}" th:data-nutr-cont7-th="${food.NUTR_CONT7}" th:data-nutr-cont8-th="${food.NUTR_CONT8}" th:data-nutr-cont9-th="${food.NUTR_CONT9}" style="font-size:18px">추가</button>
                         <a class = "col" id="foodItem" th:text="${food.foodName}"></a>
                         <a class = "col" id="foodItem" th:text="${food.NUTR_CONT1}"></a>
                         <a class = "col" id="foodItem" th:text="${food.NUTR_CONT2}"></a>
@@ -90,9 +90,15 @@
           var nutrCont2 = $(this).data('nutr-cont2-th');
           var nutrCont3 = $(this).data('nutr-cont3-th');
           var nutrCont4 = $(this).data('nutr-cont4-th');
+          var nutrCont5 = $(this).data('nutr-cont5-th');
+          var nutrCont6 = $(this).data('nutr-cont6-th');
+          var nutrCont7 = $(this).data('nutr-cont7-th');
+          var nutrCont8 = $(this).data('nutr-cont8-th');
+          var nutrCont9 = $(this).data('nutr-cont9-th');
 
           // TODO: 나중에 지울 것, 테스트용 로그
           console.log(foodName);
+          console.log(nutrCont5);
 
           $.ajax({
             type: 'POST',
@@ -102,7 +108,12 @@
               nutrCont1: nutrCont1,
               nutrCont2: nutrCont2,
               nutrCont3: nutrCont3,
-              nutrCont4: nutrCont4
+              nutrCont4: nutrCont4,
+              nutrCont5: nutrCont5,
+              nutrCont6: nutrCont6,
+              nutrCont7: nutrCont7,
+              nutrCont8: nutrCont8,
+              nutrCont9: nutrCont9,
             },
             success: function (response) {
               console.log('Data sent successfully:', response);

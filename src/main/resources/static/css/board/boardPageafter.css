@@ -1,71 +1,40 @@
-.box1 {
-    background-color: rgba(85, 237, 82, 0.35);
-    border-radius: 20px;
-    border-color: black;
-    font-family:SOYOMapleBoldTTF;
-    margin-top: 3%;
-  }
-  
-  .box1 h1 {
-    padding-top: 5%;
-    text-align: center;
-    font-size: 30px;
-  }
-  
-  .box2 {
-    background-color:rgba(202, 226, 202, 0.35);
-    border-radius: 20px;
-    margin-top: 5%;
-  }
-  
-  .btn {
-    background-color: rgb(0, 0, 0);
-    width: 200px;
-    height: 50px;
-    position: relative;
-    left: 42%;
-    border-radius: 7%;
-    border-color: aliceblue;
-    margin-top: 2%;
-  }
+body{
+    align-items:center;
+    margin:0;
+    min-width:1030px;
+}
 
-  .basic-form {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.375rem;
-    padding: 0.375rem 0.75rem;
-  }
-  
-  .title {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 30px;
-  }
-  .picture {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-    margin-bottom: 30px;
-  }
-  .set-content {
-    height: 150px;
-    margin-bottom: 10px;
-  }
-  
-  .password {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: auto;
-  }
-  
+#title{
+    font-family:SOYOMapleBoldTTF;
+    font-size:60px;
+    margin:40px;
+}
+
+#labelTitle{
+    margin:10px;
+    margin-left:5px;
+    font-family:SOYOMapleBoldTTF;
+    font-size:30px;
+}
+
+#label{
+    font-family:SOYOMapleBoldTTF;
+    font-size:20px;
+}
+
+#btn{
+    margin:10px;
+    width:200px;
+    font-family:SOYOMapleBoldTTF;
+    height:60px;
+    font-size:20px;
+}
+
+#contentBox{
+    width:100%;
+    margin:auto;
+    background-color:rgba(85, 237, 82, 0.35);
+    padding:30px;
+    border-radius:10px;
+    border:groove;
+}

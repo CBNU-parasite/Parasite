@@ -6,9 +6,13 @@ import com.project.hae_dream.repository.UserAccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 @Service
 @RequiredArgsConstructor
@@ -52,6 +56,26 @@ public class UserAccountService {
 //            userAccountDTOList.add(userAccountDTO);
         }
         return userAccountDTOList;
+    }
+
+    public HashMap<String, String> searchUser(String userId) {
+        HashMap<String, String> results = new HashMap<>();
+
+        Optional<UserAccountEntity> byUserId = userAccountRepository.findByUserId(userId);
+
+        UserAccountEntity userAccountEntity = byUserId.get();
+
+        String userName = userAccountEntity.getUserName();
+        String userSex = userAccountEntity.getUserSex();
+        String userTall = userAccountEntity.getUserTall();
+        String userWeight = userAccountEntity.getUserWeight();
+
+        results.put("userName", userName);
+        results.put("userSex",userSex);
+        results.put("userTall",userTall);
+        results.put("userWeight",userWeight);
+
+        return results;
     }
 
 }

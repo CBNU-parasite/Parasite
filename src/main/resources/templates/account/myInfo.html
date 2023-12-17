@@ -25,18 +25,18 @@
             <form action = "" method = "POST">
                 <div class = "row" id = "labelBox">
                     <div class = "row" style="margin:10px">
-                        <a id = label>이름 : OOO</a>
+                        <a id = label th:text = "'이름 : ' + ${userInfo['userName']}"></a>
                     </div>
                     <div class = "row" style="margin:10px">
-                        <a id = label>성별 : 남자</a>
+                        <a id = label th:text = "'성별 : ' + ${userInfo['userSex']}"></a>
                     </div>
                     <div class = "row" style="margin:10px">
                         <a class = "col-auto" id = label style="margin-right:50px">키 </a>
-                        <input class = "col-3" id = "inputBox">
+                        <input class = "col-3" id = "inputBox" th:placeholder = "${userInfo['userTall']}">
                     </div>
                     <div class = "row" style="margin:10px">
                         <a class = "col-auto" id = label>몸무게</a>
-                        <input class = "col-3" id = "inputBox">
+                        <input class = "col-3" id = "inputBox" th:placeholder = "${userInfo['userWeight']}">
                     </div>
                 </div>
                 <button type="button" class="btn btn-light row" id = "btn">정보 수정</button>

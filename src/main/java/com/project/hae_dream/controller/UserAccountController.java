@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
 
 @Slf4j
@@ -98,7 +99,18 @@ public class UserAccountController {
         return "/account/myPage";
     }
     @GetMapping("/account/myInfo")
-    public String myInfo(){
-        return "/account/myInfo";
+    public String myInfo(Model model, HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+
+        if (session == null || session.getAttribute("loginId") == null) {
+            model.addAttribute("log", "logIn");
+        } else {
+            model.addAttribute("userName", session.getAttribute("userName"));
+            model.addAttribute("log", "logOut");
+            HashMap<String, String> hashMap = userAccountService.searchUser(session.getAttribute("loginId").toString());
+            model.addAttribute("userInfo", hashMap);
+        }
+
+        return "account/myInfo";
     }
 }

@@ -10,6 +10,7 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
   <link rel="stylesheet" href = "/css/navBar.css">
   <link rel="stylesheet" href = "/css/main/mainPage.css">
+  <link rel="stylesheet" href = "/css/board/boardPagebefore.css">
   <title></title>
 </head>
 
@@ -62,42 +63,36 @@
     <div class = "row">
       <a class = "col"id = "label" style="text-decoration:;" href="/board/index">다른 사람들은<br>어떻게 하고 있을까요?</a>
     </div>
-    <div class =  "row justify-content-center">
-      <div class="card col-4" id = "card">
-        <img src="/img/sampleFoodBeer.jpg" class="card-img-top">
+    <li class="row justify-content-center">
+      <div class="card col-4" id="card" th:each="board: ${boardList}">
+        <tr th:if="${board.fileAttached == 1}">
+          <div id="imgBox"><img th:src="@{|/upload/${board.storedFileName}|}" alt="" class="card-img-top" id="img"></div>
+        </tr>
         <div class="card-body">
-          <h5 class="card-title">맥주!!!!</h5>
-          <p class="card-text">2023-11-28<br>author</p>
-          <btn class="btn btn-outline-danger"style="font-size:20px" onclick = "iLikeIt(this)">♡</btn>
+          <h5 class="card-title" th:text="${board.boardTitle}"></h5>
+          <p class="card-text" th:text="${board.boardCreatedTime}"></p>
+          <br>
+          <p class="card-text" th:text="${board.boardWriter}"></p>
+          <div class = "row">
+            <div class = "col">
+              <a th:id="'likeCnt' + ${board.id}"  >0</a>
+              <btn
+                      class="btn btn-outline-danger col"
+                      style="font-size: 20px"
+                      th:onclick="'iLikeIt(this, ' + ${board.id} + ')'"
+              >♡</btn>
+            </div>
+            <tr th:if="${board.boardWriter == userName}">
+              <div class = "col">
+                <form action="/board/deleteItem" method = "post">
+                  <btn type = "submit" class = "btn btn-secondary" style="float:right"> 삭제하기 </btn>
+                </form>
+              </div>
+            </tr>
+          </div>
         </div>
       </div>
-      <div class="card col-4" id = "card">
-        <img src="/img/sampleFoodForkChap.jpg" class="card-img-top">
-        <div class="card-body" >
-          <h5 class="card-title">등갈비</h5>
-          <p class="card-text">2023-11-29<br>author</p>
-          <btn class="btn btn-outline-danger" style="font-size:20px" onclick = "iLikeIt(this)">♡</btn>
-        </div>
-      </div>
-    </div>
-    <div class =  "row justify-content-center">
-      <div class="card col-4" id = "card">
-        <img src="/img/sampleFoodFrog.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">개구리 뒷다리~</h5>
-          <p class="card-text">2023-11-28<br>author</p>
-          <btn class="btn btn-outline-danger"style="font-size:20px" onclick = "iLikeIt(this)">♡</btn>
-        </div>
-      </div>
-      <div class="card col-4" id = "card">
-        <img src="/img/sampleFoodCutlet.jpg" class="card-img-top">
-        <div class="card-body" >
-          <h5 class="card-title">돈까스</h5>
-          <p class="card-text">2023-11-29<br>author</p>
-          <btn class="btn btn-outline-danger" style="font-size:20px" onclick = "iLikeIt(this)">♡</btn>
-        </div>
-      </div>
-    </div>
+    </li>
     <script src = "/js/account/likeIt.js"></script>
   </div>
 </body>

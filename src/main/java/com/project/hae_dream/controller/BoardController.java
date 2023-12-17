@@ -15,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Collections;
 
 @Controller
 @RequiredArgsConstructor
@@ -56,6 +57,7 @@ public class BoardController {
     @GetMapping("/view")
     public String findAll(Model model, HttpServletRequest request){
         List<BoardDTO> boardDTOList = boardService.findAll();
+        Collections.reverse(boardDTOList);
         model.addAttribute("boardList",boardDTOList);
         HttpSession session = request.getSession(false);
 

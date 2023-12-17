@@ -1,9 +1,12 @@
 package com.project.hae_dream.controller;
 
+import com.project.hae_dream.dto.AnalyzeDTO;
 import com.project.hae_dream.dto.BoardDTO;
 import com.project.hae_dream.dto.UserAccountDTO;
 import com.project.hae_dream.entity.UserAccountEntity;
+import com.project.hae_dream.repository.AnalyzeRepository;
 import com.project.hae_dream.repository.UserAccountRepository;
+import com.project.hae_dream.service.AnalyzeService;
 import com.project.hae_dream.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,10 +27,11 @@ import java.util.Optional;
 @SessionAttributes()
 public class UserAccountController {
 
+    private final AnalyzeRepository analyzeRepository;
     private final UserAccountService userAccountService;
+    private final AnalyzeService analyzeService;
     @Autowired private HttpSession session;
-    @Autowired
-    private UserAccountRepository userAccountRepository;
+    @Autowired private UserAccountRepository userAccountRepository;
 
     @GetMapping("/user/signup")
     public String signForm(){
@@ -98,8 +102,22 @@ public class UserAccountController {
     }
 
     @GetMapping("/account/myPage")
-    public String myPage(){
-        return "/account/myPage";
+    public String myPage(HttpServletRequest request,Model model) {
+        HttpSession session = request.getSession(false);
+
+        if (session == null || session.getAttribute("loginId") == null) {
+
+            return "redirect:/user/login";
+        } else {
+            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+            if (searchContent != null) {
+                model.addAttribute("userFoods", searchContent);
+            }
+
+            model.addAttribute("userName", session.getAttribute("userName"));
+            model.addAttribute("log", "logOut");
+            return "account/myPage";
+        }
     }
     @GetMapping("/account/myInfo")
     public String myInfo(Model model, HttpServletRequest request){

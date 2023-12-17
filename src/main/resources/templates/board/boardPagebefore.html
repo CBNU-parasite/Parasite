@@ -25,7 +25,7 @@
         <li class="row justify-content-center">
             <div class="card col-4" id="card" th:each="board: ${boardList}">
                 <tr th:if="${board.fileAttached == 1}">
-                    <div id="imgBox"><img th:src="@{|/upload/${board.storedFileName}|}" alt="" class="card-img-top" ></div>
+                    <div id="imgBox"><img th:src="@{|/upload/${board.storedFileName}|}" alt="" class="card-img-top" id="img"></div>
                 </tr>
                 <div class="card-body">
                     <h5 class="card-title" th:text="${board.boardTitle}"></h5>

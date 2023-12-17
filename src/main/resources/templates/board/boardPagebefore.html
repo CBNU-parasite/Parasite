@@ -41,11 +41,13 @@
                                     th:onclick="'iLikeIt(this, ' + ${board.id} + ')'"
                             >♡</btn>
                         </div>
-                        <div class = "col">
-                            <form action="/board/deleteItem" method = "POST">
-                                <btn type = "submit" class = "btn btn-primary"> 삭제하기 </btn>
-                            </form>
-                        </div>
+                        <tr th:if="${board.boardWriter == userName}">
+                            <div class = "col">
+                                <form action="/board/deleteItem" method = "post">
+                                    <btn type = "submit" class = "btn btn-primary" style="float:right"> 삭제하기 </btn>
+                                </form>
+                            </div>
+                        </tr>
                     </div>
                 </div>
             </div>

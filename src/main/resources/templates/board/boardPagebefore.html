@@ -42,11 +42,13 @@
                             >♡</btn>
                         </div>
                         <tr th:if="${board.boardWriter == userName}">
-                            <div class = "col">
-                                <form action="/board/deleteItem" method = "post">
-                                    <btn type = "submit" class = "btn btn-secondary" style="float:right"> 삭제하기 </btn>
-                                </form>
-                            </div>
+                          <div class="col">
+                            <form action="/board/deleteItem" th:method="post">
+                              <button type="submit" class="btn btn-secondary" style="float:right" >삭제하기
+                                <input type="hidden" name="boardId" th:value="${board.id}">
+                              </button>
+                            </form>
+                          </div>
                         </tr>
                     </div>
                 </div>

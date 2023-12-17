@@ -1,18 +1,18 @@
 package com.project.hae_dream.controller;
 
 import com.project.hae_dream.dto.BoardDTO;
+import com.project.hae_dream.entity.BoardEntity;
+import com.project.hae_dream.repository.BoardRepository;
 import com.project.hae_dream.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Collections;
@@ -22,6 +22,8 @@ import java.util.Collections;
 @RequestMapping("/board")
 public class BoardController {
     private final BoardService boardService;
+    private final BoardRepository boardRepository;
+
     @GetMapping("/index")
     public String index() {
         return "/board/boardPagebefore";
@@ -69,6 +71,13 @@ public class BoardController {
             model.addAttribute("log", "logOut");
         }
         return "/board/boardPagebefore";
+    }
+
+    @PostMapping("/deleteItem")
+    public String deleteItem(@RequestParam("boardId") Long boardId) {
+        boardRepository.deleteById(boardId);
+
+        return "redirect:/board/view";
     }
 
 }

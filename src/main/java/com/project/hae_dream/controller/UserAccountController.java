@@ -1,21 +1,22 @@
 package com.project.hae_dream.controller;
 
+import com.project.hae_dream.dto.BoardDTO;
 import com.project.hae_dream.dto.UserAccountDTO;
+import com.project.hae_dream.entity.UserAccountEntity;
+import com.project.hae_dream.repository.UserAccountRepository;
 import com.project.hae_dream.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @Controller
@@ -25,7 +26,9 @@ public class UserAccountController {
 
     private final UserAccountService userAccountService;
     @Autowired private HttpSession session;
-  
+    @Autowired
+    private UserAccountRepository userAccountRepository;
+
     @GetMapping("/user/signup")
     public String signForm(){
         return "account/signup";
@@ -112,5 +115,18 @@ public class UserAccountController {
         }
 
         return "account/myInfo";
+    }
+
+    @PostMapping("/account/myInfo")
+    public String changeBodyInfo(HttpServletRequest request ,@RequestParam("userTall") String userTall, @RequestParam("userWeight") String userWeight){
+        HttpSession session = request.getSession(false);
+        Optional<UserAccountEntity> byUserId = userAccountRepository.findByUserId(session.getAttribute("loginId").toString());
+
+        UserAccountEntity user = byUserId.get();
+        user.setUserTall(userTall);
+        user.setUserWeight(userWeight);
+
+        userAccountRepository.save(user);
+        return "redirect:/account/myPage";
     }
 }

@@ -28,6 +28,7 @@ public class MainService {
         LocalDate date2 = LocalDate.now();
 
         long days = DAYS.between(date1, date2);
+        days += 1;
 
         results.put("userName", userName);
         results.put("days", String.valueOf(days));

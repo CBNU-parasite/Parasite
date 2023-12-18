@@ -53,6 +53,7 @@ body{
     border-radius:40px;
     border-style:groove;
     text-align:center;
+    align-items:center;
 }
 
 #contentsText{
@@ -60,6 +61,8 @@ body{
     font-size:30px;
     font-weight:bold;
     margin-top: 27px;
+    text-decoration-line: none;
+    color:black;
 }
 
 #calGraph{
@@ -70,8 +73,6 @@ body{
 }
 
 #pieChartBox{
-    position:absolute;
-    justify-content:space-around;
     margin-left:40px;
     margin-top:5px;
     padding-left:5%;
@@ -81,11 +82,23 @@ body{
 
 #adviceBox{
     margin:10px;
-    margin-right:10%;
-    float:right;
     border-style:groove;
     border-radius:50px;
     background-color:white;
     height:300px;
-    width:30%;
+}
+.infoLabel{
+    font-family:SOYOMapleBoldTTF;
+    font-size:20px;
+    margin:10px;
+    font-weight:500;
+}
+
+#graphBox{
+    margin:10px;
+    background-color:white;
+    text-align:center;
+    align-items:center;
+    padding:20px;
+    border-radius:20px 20px 20px 20px;
 }

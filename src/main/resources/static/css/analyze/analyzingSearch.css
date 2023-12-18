@@ -51,15 +51,17 @@ body{
     text-align:center;
     font-weight:bold;
     align-items:center;
+    padding-bottom: 5px;
 }
 #labelHead{
     font-family:SOYOMapleBoldTTF;
-    font-size:19px;
+    font-size:21px;
     color:black;
     text-decoration:none;
     font-family:sans-serif;
     text-align:center;
     font-weight:bold;
+    margin-top: 10px;
 }
 #foodItem{
     font-family:SOYOMapleBoldTTF;

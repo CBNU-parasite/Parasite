@@ -22,8 +22,8 @@ public class AnalyzeService {
     private final UserAccountRepository userAccountRepository;
 
     @Transactional(readOnly = true)
-    public List<AnalyzeDTO> findFoodLogsByUserIdAndToday(String userId){
-        Optional<UserAccountEntity> userAccountEntity = userAccountRepository.findByUserId(userId);
+    public List<AnalyzeDTO> findFoodLogsByUserNameAndToday(String userId){
+        Optional<UserAccountEntity> userAccountEntity = userAccountRepository.findByUserName(userId);
         if (userAccountEntity.isPresent()) {
             UserAccountEntity user = userAccountEntity.get();
             Long getUserId = user.getId();

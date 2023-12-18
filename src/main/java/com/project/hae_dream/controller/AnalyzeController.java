@@ -23,7 +23,6 @@ import javax.transaction.Transactional;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Controller
@@ -49,7 +48,7 @@ public class AnalyzeController {
 
             return "redirect:/user/login";
         } else {
-            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserNameAndToday(session.getAttribute("userName").toString());
             if (searchContent != null) {
                 model.addAttribute("userFoods", searchContent);
             }
@@ -69,7 +68,7 @@ public class AnalyzeController {
 
         HttpSession session = request.getSession(false);
 
-        List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+        List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserNameAndToday(session.getAttribute("userName").toString());
         if (searchContent != null) {
             model.addAttribute("userFoods", searchContent);
         }
@@ -101,7 +100,8 @@ public class AnalyzeController {
         HttpSession session = request.getSession(false);
 
         AnalyzeEntity analyzeEntity = new AnalyzeEntity();
-        UserAccountEntity userAccountEntity = userAccountRepository.findByUserId(session.getAttribute("userName").toString()).orElse(null);
+        String userId = session.getAttribute("userName").toString();
+        UserAccountEntity userAccountEntity = userAccountRepository.findByUserName(userId).orElse(null);
         analyzeEntity.setUserAccountEntity(userAccountEntity);
         analyzeEntity.setFoodName(foodName);
         analyzeEntity.setKcal(Double.parseDouble(nutrCont1));
@@ -132,7 +132,7 @@ public class AnalyzeController {
 
         HttpSession session = request.getSession(false);
 
-        List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+        List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserNameAndToday(session.getAttribute("userName").toString());
         if (searchContent != null) {
             model.addAttribute("userFoods", searchContent);
         }
@@ -152,7 +152,7 @@ public class AnalyzeController {
 
             return "redirect:/user/login";
         } else {
-            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserNameAndToday(session.getAttribute("userName").toString());
             if (searchContent != null) {
                 model.addAttribute("userFoods", searchContent);
             }

@@ -1,7 +1,6 @@
 package com.project.hae_dream.controller;
 
 import com.project.hae_dream.dto.AnalyzeDTO;
-import com.project.hae_dream.dto.BoardDTO;
 import com.project.hae_dream.dto.UserAccountDTO;
 import com.project.hae_dream.entity.UserAccountEntity;
 import com.project.hae_dream.repository.AnalyzeRepository;
@@ -109,11 +108,12 @@ public class UserAccountController {
 
             return "redirect:/user/login";
         } else {
-            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserIdAndToday(session.getAttribute("userName").toString());
+            List<AnalyzeDTO> searchContent = analyzeService.findFoodLogsByUserNameAndToday(session.getAttribute("userName").toString());
             if (searchContent != null) {
                 model.addAttribute("userFoods", searchContent);
             }
-
+            HashMap<String, String> hashMap = userAccountService.searchUser(session.getAttribute("loginId").toString());
+            model.addAttribute("userInfo", hashMap);
             model.addAttribute("userName", session.getAttribute("userName"));
             model.addAttribute("log", "logOut");
             return "account/myPage";

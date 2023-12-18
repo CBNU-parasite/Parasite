@@ -84,6 +84,15 @@ body{
     border-radius:20px;
     border-style:groove;
     max-height:110px;
+    width: 255px;
+    height: 166px;
+}
+
+#init{
+    font-family:SOYOMapleBoldTTF;
+    text-align: center;
+    position: relative;
+    top: 10px;
 }
 #graphBox{
     padding:30px;

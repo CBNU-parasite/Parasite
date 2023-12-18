@@ -88,10 +88,14 @@ body{
     height:300px;
 }
 .infoLabel{
+    text-decoration-line: none;
+    color:black;
+    text-align:center;
     font-family:SOYOMapleBoldTTF;
     font-size:20px;
-    margin:10px;
     font-weight:500;
+    margin-top:20px;
+    padding:10px;
 }
 
 #graphBox{

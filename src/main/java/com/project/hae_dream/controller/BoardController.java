@@ -65,7 +65,7 @@ public class BoardController {
 //        Collections.reverse(boardDTOList);
 
         System.out.println(page);
-        int pageSize = 6;
+        int pageSize = 4;
 
         Sort.Order order = Sort.Order.desc("createdTime");
         Sort sort = Sort.by(order);

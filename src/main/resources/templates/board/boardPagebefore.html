@@ -86,11 +86,10 @@
               // 각각의 eachBox 요소에서 내용을 가져와서 combinedContent에 추가
               result += $(this).html();
             });
-            console.log(result);
 
             $('#card-list').append(result);
 
-            page++; // 페이지 번호 증가
+            // page++; // 페이지 번호 증가
           },
           error: function (error) {
             console.error('Error:', error);
@@ -98,14 +97,16 @@
         });
       }
 
+
       // 스크롤 이벤트 감지
       window.addEventListener('scroll', () => {
         // 현재 스크롤 위치, 전체 문서의 높이, 현재 뷰포트의 높이를 가져옴
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-          console.log(page);
+          console.log(page++);
+
           loadMoreItems(); // 새로운 페이지 로드
         }
-      });
+    });
 
     </script>
     <script src="/js/account/likeIt.js"></script>

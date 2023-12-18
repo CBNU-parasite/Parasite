@@ -5,6 +5,9 @@ import com.project.hae_dream.entity.BoardEntity;
 import com.project.hae_dream.repository.BoardRepository;
 import com.project.hae_dream.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -57,10 +60,18 @@ public class BoardController {
     }
 
     @GetMapping("/view")
-    public String findAll(Model model, HttpServletRequest request){
-        List<BoardDTO> boardDTOList = boardService.findAll();
-        Collections.reverse(boardDTOList);
-        model.addAttribute("boardList",boardDTOList);
+    public String findAll(Model model, HttpServletRequest request, @RequestParam(defaultValue = "0") int page){
+//        List<BoardDTO> boardDTOList = boardService.findAll();
+//        Collections.reverse(boardDTOList);
+
+        System.out.println(page);
+        int pageSize = 6;
+
+        Sort.Order order = Sort.Order.desc("createdTime");
+        Sort sort = Sort.by(order);
+
+        Page<BoardDTO> boardPage = boardService.getItems(PageRequest.of(page, pageSize, sort));
+        model.addAttribute("boardList",boardPage);
         HttpSession session = request.getSession(false);
 
         if (session == null || session.getAttribute("loginId") == null) {
@@ -72,6 +83,7 @@ public class BoardController {
         }
         return "/board/boardPagebefore";
     }
+
 
     @PostMapping("/deleteItem")
     public String deleteItem(@RequestParam("boardId") Long boardId) {

@@ -6,6 +6,8 @@ import com.project.hae_dream.entity.BoardFileEntity;
 import com.project.hae_dream.repository.BoardFileRepository;
 import com.project.hae_dream.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -46,7 +48,7 @@ public class BoardService {
             String originalFilename = boardFile.getOriginalFilename();//2.
             String storedFileName = System.currentTimeMillis() + "_" +originalFilename; // 3.
 //            String savePath = "C:/springboot_img/" + storedFileName; //C:/springboot_img/2030423041_내사진. 윈도우 ver
-            String savePath = "/Users/wonsick/springboot_img/" + storedFileName; // 4. C:/springboot_img/2030423041_내사진. 맥
+            String savePath = "/Users/jinjin/springboot_img/" + storedFileName; // 4. C:/springboot_img/2030423041_내사진. 맥
             boardFile.transferTo(new File(savePath)); // 5.
             BoardEntity boardEntity = BoardEntity. toSaveFileEntity(boardDTO);
             Long saveId = boardRepository.save(boardEntity).getId();
@@ -65,5 +67,11 @@ public class BoardService {
             boardDTOList.add(BoardDTO.toBoardDTO(boardEntity));
         }
         return boardDTOList;
+    }
+
+    @Transactional
+    public Page<BoardDTO> getItems(Pageable pageable) {
+        return boardRepository.findAll(pageable)
+                .map(BoardDTO::toBoardDTO);
     }
 }

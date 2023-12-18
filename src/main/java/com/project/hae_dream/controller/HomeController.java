@@ -28,8 +28,11 @@ public class HomeController {
 
         List<BoardDTO> boardDTOList = boardService.findAll();
         Collections.reverse(boardDTOList);
-
-        model.addAttribute("boardList",boardDTOList.subList(0,4));
+        try {
+            model.addAttribute("boardList",boardDTOList.subList(0,4));
+        } catch (Exception e) {
+            System.out.println(e);
+        }
 
         HttpSession session = request.getSession(false);
 

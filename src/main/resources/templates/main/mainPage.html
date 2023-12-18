@@ -86,6 +86,19 @@
         </div>
       </div>
     </li>
+    <ul th:if="${log == 'logIn'}">
+      <div class="row">
+        <a href="/user/signup">
+          <button
+                  class = "btn btn-primary"
+                  id="label"
+                  style = "width : 300px; margin:auto;color:white;"
+          >함께하러가기</button>
+        </a>
+
+      </div>
+    </ul>
+
     <script src = "/js/account/likeIt.js"></script>
   </div>
 </body>

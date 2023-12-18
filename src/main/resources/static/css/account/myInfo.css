@@ -28,7 +28,7 @@ body{
     width:15%;
     border-radius:40px;
     left:5%;
-    padding-top:20px;
+    padding-top:30px;
     padding-bottom:20px;
     border-style:groove;
 }
@@ -37,7 +37,7 @@ body{
     font-size:24px;
     font-weight:bold;
     color :rgb(0,0,0);
-    text-decoration-line:underline;
+    text-decoration-line:none;
 }
 #contents{
     background-color : rgba(85, 237, 82, 0.35);

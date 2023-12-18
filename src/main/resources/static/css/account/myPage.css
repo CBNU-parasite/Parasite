@@ -39,7 +39,7 @@ body{
     font-size:24px;
     font-weight:bold;
     color :rgb(0,0,0);
-    text-decoration-line:underline;
+    text-decoration-line:none;
 }
 
 #contents{

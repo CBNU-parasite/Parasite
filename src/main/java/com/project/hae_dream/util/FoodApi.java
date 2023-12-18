@@ -36,6 +36,10 @@ public class FoodApi {
         JsonNode i2790Node = jsonData.get("I2790");
         JsonNode rowNode = i2790Node.get("row");
 
+        if (rowNode == null) {
+            return null;
+        }
+
         ArrayList<FoodInfo> results = new ArrayList<>();
 
         // {"NUTR_CONT8":"2.76","NUTR_CONT9":"0.03","NUTR_CONT4":"15.01","NUTR_CONT5":"3.03","NUTR_CONT6":"1962.14","NUM":"1","NUTR_CONT7":"25.18","NUTR_CONT1":"243.03","NUTR_CONT2":"11.93","SUB_REF_NAME":"식약처(\u002712) 제1권","NUTR_CONT3":"15.07","RESEARCH_YEAR":"2019","MAKER_NAME":"","GROUP_NAME":"","SERVING_SIZE":"400","SERVING_UNIT":"g","SAMPLING_REGION_NAME":"전국(대표)","SAMPLING_MONTH_CD":"AVG","SAMPLING_MONTH_NAME":"평균","DESC_KOR":"김치찌개","SAMPLING_REGION_CD":"ZZ","FOOD_CD":"D000385"}

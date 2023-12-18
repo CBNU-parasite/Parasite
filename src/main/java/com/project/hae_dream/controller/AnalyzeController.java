@@ -74,7 +74,9 @@ public class AnalyzeController {
             model.addAttribute("userFoods", searchContent);
         }
 
-        model.addAttribute("foodInfo", foodInfo);
+        if (foodInfo != null) {
+            model.addAttribute("foodInfo", foodInfo);
+        }
         model.addAttribute("userName", session.getAttribute("userName"));
         model.addAttribute("log", "logOut");
 

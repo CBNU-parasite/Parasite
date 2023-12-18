@@ -34,6 +34,12 @@
             <div id = "adviceBox">
                 <h3>Status</h3>
                 <a>GOOD</a>
+              <ul>
+                <li id="kcal_status"></li>
+                <li id="carb_status"></li>
+                <li id="prot_status"></li>
+                <li id="salt_status"></li>
+              </ul>
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -44,6 +50,10 @@
                 var carb = 0, fat=0, prot=0;
                 var cal=0,sug=0,salt=0,chole=0,fata=0,trans=0;
                 var userfood = /*[[${userFoods}]]*/[];
+                var userInfo = /*[[${userInfo}]]*/[];
+                var sex = userInfo['userSex']
+                console.log(userfood);
+                console.log(sex);
                 for(var i=0; i<userfood.length;i++){
                     carb += userfood[i].carbohydrate;
                     fat += userfood[i].fat;
@@ -55,6 +65,100 @@
                     fata += userfood[i].saturatedFat;
                     trans = userfood[i].transfat;
                 }
+
+                let kcalInfo;
+                let carbInfo;
+                let protInfo;
+                let saltInfo;
+
+                if(sex === '남'){// 남자면
+                  if(cal>=2800){
+                    kcalInfo = '칼로리 : 과잉';
+                  }
+                  else if(cal<2800&&cal>2200){
+                    kcalInfo = '칼로리 : 적정';
+                  }
+                  else{
+                    kcalInfo = '칼로리 : 부족';
+                  }
+
+                  if(carb>=160){
+                    carbInfo = '탄수화물 : 과잉';
+                  }
+                  else if(carb>100&&carb<160){
+                    carbInfo = '탄수화물 : 적정';
+                  }
+                  else {
+                    carbInfo = '탄수화물 : 부족';
+                  }
+
+                  if(prot>=90){
+                    protInfo = '단백질 : 과잉';
+                  }
+                  else if(prot<90&&prot>50){
+                    protInfo = '단백질 : 적정';
+                  }
+                  else{
+                    protInfo = '단백질 : 부족';
+                  }
+
+                  if(salt>=1800){
+                    saltInfo = '나트륨 : 과잉';
+                  }
+                  else if(salt<1800&&salt>1200){
+                    saltInfo = '나트륨 : 적정';
+                  }
+                  else{
+                    saltInfo = '나트륨 : 부족';
+                  }
+                }
+                else{
+                  if(cal>=2400){
+                    kcalInfo = '칼로리 : 과잉';
+                  }
+                  else if(cal<2200&&cal>1800){
+                    kcalInfo = '칼로리 : 적정';
+                  }
+                  else{
+                    kcalInfo = '칼로리 : 부족';
+                  }
+
+                  if(carb>=160){
+                    carbInfo = '탄수화물 : 과잉';
+                  }
+                  else if(carb>100&&carb<160){
+                    carbInfo = '탄수화물 : 적정';
+                  }
+                  else {
+                    carbInfo = '탄수화물 : 부족';
+                  }
+
+                  if(prot>=80){
+                    protInfo = '단백질 : 과잉';
+                  }
+                  else if(prot<80&&prot>40){
+                    protInfo = '단백질 : 적정';
+                  }
+                  else{
+                    protInfo = '단백질 : 부족';
+                  }
+
+                  if(salt>=1800){
+                    saltInfo = '나트륨 : 과잉';
+                  }
+                  else if(salt<1800&&salt>1200){
+                    saltInfo = '나트륨 : 적정';
+                  }
+                  else{
+                    saltInfo = '나트륨 : 부족';
+                  }
+                }
+
+                document.getElementById("kcal_status").append(kcalInfo);
+                document.getElementById("carb_status").append(carbInfo);
+                document.getElementById("prot_status").append(protInfo);
+                document.getElementById("salt_status").append(saltInfo);
+
                 cal=cal/26;
                 salt=salt/30;
                 chole=chole/3;
